@@ -1,0 +1,425 @@
+// This is your Prisma schema file
+// Platform: Adult products e-commerce (sex dolls, lubricants, accessories, etc.)
+// DB: Neon PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ─── USERS ───────────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  passwordHash  String?
+  name          String?
+  avatar        String?
+  role          UserRole  @default(CUSTOMER)
+  verified      Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  orders        Order[]
+  reviews       Review[]
+  wishlist      WishlistItem[]
+  addresses     Address[]
+  cart          CartItem[]
+  stories         Story[]
+  storyLikes      StoryLike[]
+  storyComments   StoryComment[]
+  authoredSeries  EroticaSeries[]
+  seriesLikes     EroticaSeriesLike[]
+  reactions       EroticaReaction[]
+  eroticaComments EroticaComment[]
+  bookmarks       EroticaBookmark[]
+  reads           EroticaRead[]
+
+  @@map("users")
+}
+
+enum UserRole {
+  CUSTOMER
+  ADMIN
+}
+
+// ─── CATEGORIES ──────────────────────────────────────────────────────────────
+
+model Category {
+  id          String     @id @default(cuid())
+  name        String
+  slug        String     @unique
+  description String?
+  image       String?
+  parentId    String?
+  parent      Category?  @relation("CategoryChildren", fields: [parentId], references: [id])
+  children    Category[] @relation("CategoryChildren")
+  products    Product[]
+  createdAt   DateTime   @default(now())
+
+  @@map("categories")
+}
+
+// ─── PRODUCTS ────────────────────────────────────────────────────────────────
+
+model Product {
+  id            String        @id @default(cuid())
+  name          String
+  slug          String        @unique
+  description   String
+  shortDesc     String?
+  price         Decimal       @db.Decimal(10, 2)
+  comparePrice  Decimal?      @db.Decimal(10, 2)
+  currency      String        @default("GHS")
+  stock         Int           @default(0)
+  sku           String?       @unique
+  isBestseller  Boolean       @default(false)
+  isFeatured    Boolean       @default(false)
+  isActive      Boolean       @default(true)
+  badge         String?       // e.g. "Bestseller", "New", "Hot"
+  tagline       String?       // e.g. "Beginner friendly", "Quiet & discreet"
+
+  categoryId    String
+  category      Category      @relation(fields: [categoryId], references: [id])
+
+  images        ProductImage[]
+  tags          ProductTag[]
+  reviews       Review[]
+  cartItems     CartItem[]
+  orderItems    OrderItem[]
+  wishlistItems WishlistItem[]
+  variants      ProductVariant[]
+
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("products")
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  alt       String?
+  isPrimary Boolean  @default(false)
+  order     Int      @default(0)
+
+  @@map("product_images")
+}
+
+model ProductVariant {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name      String   // e.g. "Color", "Size"
+  value     String   // e.g. "Pink", "Large"
+  price     Decimal? @db.Decimal(10, 2)
+  stock     Int      @default(0)
+
+  @@map("product_variants")
+}
+
+model Tag {
+  id       String       @id @default(cuid())
+  name     String       @unique
+  slug     String       @unique
+  products ProductTag[]
+
+  @@map("tags")
+}
+
+model ProductTag {
+  productId String
+  tagId     String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([productId, tagId])
+  @@map("product_tags")
+}
+
+// ─── REVIEWS ─────────────────────────────────────────────────────────────────
+
+model Review {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating    Int      // 1–5
+  title     String?
+  body      String
+  verified  Boolean  @default(false) // verified purchase
+  createdAt DateTime @default(now())
+
+  @@map("reviews")
+}
+
+// ─── CART ────────────────────────────────────────────────────────────────────
+
+model CartItem {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+  @@map("cart_items")
+}
+
+// ─── WISHLIST ─────────────────────────────────────────────────────────────────
+
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+  @@map("wishlist_items")
+}
+
+// ─── ORDERS ──────────────────────────────────────────────────────────────────
+
+model Order {
+  id              String      @id @default(cuid())
+  userId          String
+  user            User        @relation(fields: [userId], references: [id])
+  status          OrderStatus @default(PENDING)
+  total           Decimal     @db.Decimal(10, 2)
+  currency        String      @default("GHS")
+  addressId       String?
+  address         Address?    @relation(fields: [addressId], references: [id])
+  paymentMethod   String?
+  paymentRef      String?
+  notes           String?
+  items           OrderItem[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@map("orders")
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Decimal @db.Decimal(10, 2)
+
+  @@map("order_items")
+}
+
+// ─── ADDRESSES ───────────────────────────────────────────────────────────────
+
+model Address {
+  id         String  @id @default(cuid())
+  userId     String
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fullName   String
+  phone      String
+  street     String
+  city       String
+  region     String
+  country    String  @default("Ghana")
+  isDefault  Boolean @default(false)
+  orders     Order[]
+
+  @@map("addresses")
+}
+
+// ─── STORIES (Community / Real Talk) ─────────────────────────────────────────
+
+model Story {
+  id        String         @id @default(cuid())
+  userId    String
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category  StoryCategory  @default(REAL_TALK)
+  title     String?
+  body      String
+  image     String?
+  isPublic  Boolean        @default(true)
+  likes     StoryLike[]
+  comments  StoryComment[]
+  createdAt DateTime       @default(now())
+
+  @@map("stories")
+}
+
+enum StoryCategory {
+  REAL_TALK
+  WOMEN_SAY
+  FOR_COUPLES
+  TIPS
+}
+
+model StoryLike {
+  storyId String
+  userId  String
+  story   Story  @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([storyId, userId])
+  @@map("story_likes")
+}
+
+model StoryComment {
+  id        String   @id @default(cuid())
+  storyId   String
+  userId    String
+  story     Story    @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  body      String
+  createdAt DateTime @default(now())
+
+  @@map("story_comments")
+}
+
+// ─── EROTICA SERIES ───────────────────────────────────────────────────────────
+
+model EroticaSeries {
+  id          String    @id @default(cuid())
+  authorId    String
+  author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  title       String
+  slug        String    @unique
+  description String
+  coverImage  String?
+  genre       String    @default("Romance")
+  isPublic    Boolean   @default(true)
+  isComplete  Boolean   @default(false)
+
+  episodes    EroticaEpisode[]
+  likes       EroticaSeriesLike[]
+  bookmarks   EroticaBookmark[]
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("erotica_series")
+}
+
+model EroticaEpisode {
+  id          String    @id @default(cuid())
+  seriesId    String
+  series      EroticaSeries @relation(fields: [seriesId], references: [id], onDelete: Cascade)
+  title       String
+  slug        String
+  body        String    @db.Text
+  episodeNum  Int
+  isFree      Boolean   @default(true)
+  readTime    Int       @default(5)  // minutes
+
+  reactions   EroticaReaction[]
+  comments    EroticaComment[]
+  reads       EroticaRead[]
+
+  createdAt   DateTime  @default(now())
+
+  @@unique([seriesId, episodeNum])
+  @@unique([seriesId, slug])
+  @@map("erotica_episodes")
+}
+
+model EroticaSeriesLike {
+  seriesId  String
+  userId    String
+  series    EroticaSeries @relation(fields: [seriesId], references: [id], onDelete: Cascade)
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime      @default(now())
+
+  @@id([seriesId, userId])
+  @@map("erotica_series_likes")
+}
+
+enum ReactionType {
+  FIRE
+  HEART
+  SHOCKED
+  CLAP
+}
+
+model EroticaReaction {
+  id        String       @id @default(cuid())
+  episodeId String
+  userId    String
+  episode   EroticaEpisode @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      ReactionType
+
+  @@unique([episodeId, userId, type])
+  @@map("erotica_reactions")
+}
+
+model EroticaComment {
+  id        String   @id @default(cuid())
+  episodeId String
+  userId    String
+  episode   EroticaEpisode @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  body      String
+  createdAt DateTime @default(now())
+
+  @@map("erotica_comments")
+}
+
+model EroticaBookmark {
+  seriesId  String
+  userId    String
+  series    EroticaSeries @relation(fields: [seriesId], references: [id], onDelete: Cascade)
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime      @default(now())
+
+  @@id([seriesId, userId])
+  @@map("erotica_bookmarks")
+}
+
+model EroticaRead {
+  id        String   @id @default(cuid())
+  episodeId String
+  userId    String
+  episode   EroticaEpisode @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime       @default(now())
+
+  @@unique([episodeId, userId])
+  @@map("erotica_reads")
+}
+
+// ─── BANNERS / PROMOTIONS ─────────────────────────────────────────────────────
+
+model Banner {
+  id        String   @id @default(cuid())
+  title     String
+  subtitle  String?
+  image     String?
+  link      String?
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@map("banners")
+}

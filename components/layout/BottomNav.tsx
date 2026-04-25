@@ -1,0 +1,53 @@
+'use client'
+
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { Home, ShoppingBag, BookOpen, User } from 'lucide-react'
+
+const navItems = [
+  { href: '/', icon: Home, label: 'Home' },
+  { href: '/shop', icon: ShoppingBag, label: 'Shop' },
+  { href: '/series', icon: BookOpen, label: 'Series' },
+  { href: '/profile', icon: User, label: 'Profile' },
+]
+
+export default function BottomNav() {
+  const pathname = usePathname()
+
+  return (
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-50">
+      <nav
+        className="flex border-t border-white/[0.05]"
+        style={{ backgroundColor: '#0a0b0f' }}
+      >
+        {navItems.map(({ href, icon: Icon, label }) => {
+          const active = href === '/' ? pathname === '/' : pathname.startsWith(href)
+          return (
+            <Link
+              key={href}
+              href={href}
+              className="flex-1 flex flex-col items-center justify-center gap-[4px] py-3.5"
+            >
+              <Icon
+                size={20}
+                strokeWidth={active ? 0 : 1.5}
+                fill={active ? '#BF567D' : 'none'}
+                color={active ? '#BF567D' : undefined}
+                className={active ? '' : 'text-gray-700'}
+              />
+              <span
+                className="text-[9px] font-medium tracking-wide"
+                style={{ color: active ? '#BF567D' : '#374151' }}
+              >
+                {label}
+              </span>
+            </Link>
+          )
+        })}
+      </nav>
+      <div className="flex justify-center pb-1.5 pt-0.5" style={{ backgroundColor: '#0a0b0f' }}>
+        <div className="w-20 h-[2.5px] rounded-full bg-white/10" />
+      </div>
+    </div>
+  )
+}

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Stop-Process -Force)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/@prisma/adapter-neon/package.json'\\).version, require\\('./node_modules/@prisma/client/package.json'\\).version, require\\('./node_modules/@neondatabase/serverless/package.json'\\).version\\)\")"
+    ]
+  }
+}
