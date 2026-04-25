@@ -4,8 +4,6 @@
 
 html {
   background-color: #08090D;
-  height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -13,8 +11,6 @@ body {
   color: #ffffff;
   max-width: 430px;
   margin: 0 auto;
-  height: 100%;
-  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

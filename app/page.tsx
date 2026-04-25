@@ -26,7 +26,7 @@ export default async function Home() {
   return (
     <div
       style={{
-        height: '100%',
+        height: '100dvh',
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
