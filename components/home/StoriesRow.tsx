@@ -100,7 +100,7 @@ export default function StoriesRow({ stories = [] }: { stories: Story[] }) {
 
   return (
     <>
-      <section className="mt-4">
+      <section className="mt-4 flex-shrink-0">
         <p className="text-[10px] font-semibold text-gray-700 uppercase tracking-[0.12em] mb-3 px-5">Stories</p>
         {/* px-5 on the scroll container so the border wrapper is never clipped */}
         <div className="flex gap-4 overflow-x-auto scrollbar-hide px-5 pb-1">

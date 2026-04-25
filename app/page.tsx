@@ -24,10 +24,26 @@ export default async function Home() {
   const featuredStory = serializedStories[0] ?? null
 
   return (
-    <div className="pb-24">
+    <div
+      style={{
+        height: '100dvh',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
+        paddingBottom: 78,
+      }}
+    >
       <Header />
       <StoriesRow stories={serializedStories} />
-      {featuredStory && <StoryCard story={featuredStory} />}
+
+      {/* Story card grows to fill remaining space */}
+      <div style={{ flex: 1, minHeight: 0, padding: '10px 20px 0' }}>
+        {featuredStory
+          ? <StoryCard story={featuredStory} />
+          : <div style={{ height: '100%', borderRadius: 18, backgroundColor: '#0e0810' }} />
+        }
+      </div>
+
       <ProductRow
         products={featuredProducts.map(p => ({
           id: p.id,

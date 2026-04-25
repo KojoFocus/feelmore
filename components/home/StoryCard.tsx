@@ -40,7 +40,7 @@ export default function StoryCard({ story }: { story: Story }) {
   const initial = (story.user.name ?? 'A')[0].toUpperCase()
 
   return (
-    <div className="relative overflow-hidden mx-5 mt-3 rounded-[18px]" style={{ minHeight: 172 }}>
+    <div className="relative overflow-hidden h-full" style={{ borderRadius: 18 }}>
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -51,7 +51,7 @@ export default function StoryCard({ story }: { story: Story }) {
       {/* Left accent */}
       <div className="absolute left-0 top-4 bottom-4 w-[2px] rounded-full" style={{ backgroundColor: 'rgba(191,86,125,0.35)' }} />
 
-      <div className="relative flex flex-col px-5 py-4">
+      <div className="relative h-full flex flex-col px-5 py-4">
 
         {/* Top row */}
         <div className="flex items-center gap-2.5 mb-3 flex-shrink-0">
@@ -77,7 +77,7 @@ export default function StoryCard({ story }: { story: Story }) {
           </p>
         )}
 
-        <div className="overflow-hidden" style={{ maxHeight: 72 }}>
+        <div className="flex-1 min-h-0 overflow-hidden">
           <p className="text-white/80 text-[13px] font-normal leading-[1.65]" style={{ letterSpacing: '0.01em' }}>
             {story.body}
           </p>
