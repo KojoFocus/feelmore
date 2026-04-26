@@ -18,11 +18,11 @@ const categoryLabels: Record<string, string> = {
   TIPS: 'Tips',
 }
 
-const categoryBg: Record<string, string> = {
-  REAL_TALK:   'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=500&fit=crop&q=80',
-  WOMEN_SAY:   'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&h=500&fit=crop&q=80',
-  FOR_COUPLES: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=600&h=500&fit=crop&q=80',
-  TIPS:        'https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&h=500&fit=crop&q=80',
+const categoryAccent: Record<string, string> = {
+  REAL_TALK:   'rgba(90,30,50,0.35)',
+  WOMEN_SAY:   'rgba(60,20,70,0.35)',
+  FOR_COUPLES: 'rgba(50,25,60,0.35)',
+  TIPS:        'rgba(30,40,70,0.35)',
 }
 
 function timeAgo(date: Date | string): string {
@@ -37,20 +37,14 @@ function timeAgo(date: Date | string): string {
 
 export default function StoryCard({ story }: { story: Story }) {
   const label = categoryLabels[story.category] ?? story.category
-  const bg = categoryBg[story.category] ?? categoryBg.REAL_TALK
-  const cardBg = '#100C0A'
+  const accent = categoryAccent[story.category] ?? categoryAccent.REAL_TALK
 
   return (
-    <div className="relative overflow-hidden h-full" style={{ borderRadius: 18, backgroundColor: cardBg }}>
-      {/* Full background image — brighter on right, shows texture */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${bg})`, filter: 'brightness(0.65) saturate(1.1)' }}
-      />
-      {/* Dark left for text readability, fades right to reveal image */}
+    <div className="relative overflow-hidden h-full" style={{ borderRadius: 18, backgroundColor: '#0E0B09' }}>
+      {/* Subtle colour tint in the right corner — no image, no noise */}
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(to right, rgba(13,10,8,0.97) 0%, rgba(13,10,8,0.88) 35%, rgba(13,10,8,0.35) 65%, rgba(13,10,8,0.05) 100%)' }}
+        style={{ background: `radial-gradient(ellipse at 100% 50%, ${accent} 0%, transparent 70%)` }}
       />
 
       <div className="relative h-full flex flex-col px-5 py-4">
