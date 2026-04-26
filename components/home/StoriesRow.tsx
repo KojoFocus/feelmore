@@ -100,8 +100,8 @@ export default function StoriesRow({ stories = [] }: { stories: Story[] }) {
 
   return (
     <>
-      <section className="mt-4 flex-shrink-0">
-        <p className="mb-3 px-5" style={{ color: '#ffffff', fontSize: 15, fontWeight: 600 }}>Stories</p>
+      <section className="mt-2 flex-shrink-0">
+        <p className="mb-1 px-5" style={{ color: '#ffffff', fontSize: 15, fontWeight: 600 }}>Stories</p>
         {/* px-5 on the scroll container so the border wrapper is never clipped */}
         <div className="flex gap-4 overflow-x-auto scrollbar-hide px-5 pb-1">
           <StoryCircle label="Your story" active={false} />

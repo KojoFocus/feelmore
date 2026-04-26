@@ -31,14 +31,14 @@ export default async function Home() {
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
-        paddingBottom: 78,
+        paddingBottom: 62,
       }}
     >
       <Header />
       <StoriesRow stories={serializedStories} />
 
       {/* Story card grows to fill remaining space */}
-      <div style={{ flex: 1, minHeight: 0, padding: '8px 16px 0' }}>
+      <div style={{ flex: 1, minHeight: 0, padding: '4px 16px 0' }}>
         {featuredStory
           ? <StoryCard story={featuredStory} />
           : <div style={{ height: '100%', borderRadius: 18, backgroundColor: '#0E0B08' }} />
