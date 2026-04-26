@@ -741,7 +741,7 @@ async function main() {
       userId: user1.id,
       category: StoryCategory.REAL_TALK,
       title: "Thursday night alone",
-      body: "I was in bed, lights off, when I finally opened the Luna Mini box. I slid it under the sheets and pressed it between my thighs. The first setting made me gasp. I turned it up. My hips lifted off the mattress on their own — my body took over completely. I came so hard my thighs were still shaking ten minutes later. I lay there in the dark and thought: I have been starving myself for years.",
+      body: "I came so hard my thighs were still shaking ten minutes later. That was my first time with the Luna Mini — lights off, sheets gripped, hips lifting completely off the mattress on their own. I had barely turned it past the first setting. I lay there in the dark afterward thinking: I have been starving myself for years and I didn't even know it.",
       isPublic: true,
     },
   });
@@ -751,7 +751,7 @@ async function main() {
       userId: user3.id,
       category: StoryCategory.WOMEN_SAY,
       title: "His mouth first",
-      body: "He kissed down my stomach slowly, parting my thighs with both hands. When his mouth found me I stopped breathing. He took his time — licking softly at first, then harder when my fingers gripped his hair. He slid two fingers inside me and curled them upward and I came against his face saying his name like a prayer. Then he reached for the Silk Glide and we were nowhere near done.",
+      body: "His mouth was between my thighs before I'd finished undressing. He licked slowly, then harder when my fingers pushed into his hair — then two fingers inside me, curling upward, and I came against his face saying his name like I had no other words. He reached for the Silk Glide afterward and kissed up my stomach and we were nowhere near finished. That night lasted until the city outside went quiet.",
       isPublic: true,
     },
   });
@@ -761,7 +761,7 @@ async function main() {
       userId: user2.id,
       category: StoryCategory.FOR_COUPLES,
       title: "The remote was his",
-      body: "He slipped the Double Trouble inside me, fit the ring on himself, and handed me nothing — the remote stayed in his hand all night. Every time I got close he turned it down. He watched my face fall apart and put it back together three times before he finally let me finish. When it hit I grabbed his shoulders and couldn't let go. He held me through all of it. That night broke something open between us that has never closed.",
+      body: "He slipped the Double Trouble in and kept the remote. Every time I got close he turned it down and watched my face fall apart. Three times. He put me back together and took me apart again and when he finally let me finish I grabbed his shoulders so hard I left marks. He held me through all of it without letting go once. That night cracked something open between us that has never closed.",
       isPublic: true,
     },
   });
@@ -770,8 +770,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.TIPS,
-      title: "Warm it in your hands",
-      body: "Pour the Ignite warming lube into your palm and rub your hands together for thirty seconds before you touch anything. The heat builds in your palms first — then the moment you use it, the warmth spreads and opens everything up. Your sensitivity triples. Whatever you do next lands completely differently. Do not skip this. It is the difference between good and unforgettable.",
+      title: "Warm it first — trust me",
+      body: "Rub Ignite warming lube between your palms for thirty seconds before you touch anything. By the time your hands move the heat is already spreading and your body opens completely differently. Every nerve is awake. Whatever comes next — fingers, mouth, toy — lands at twice the intensity. I learned this by accident. Now I will never skip it again.",
       isPublic: true,
     },
   });
@@ -780,8 +780,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.REAL_TALK,
-      title: "I wasn't ready for it",
-      body: "She straddled me and reached between us to guide me inside her. Slow. Inch by inch, watching my face the whole time. Then she leaned forward, lips at my ear, and whispered exactly what she wanted. I gripped her hips and gave it to her. She rode me until her thighs were shaking and her nails were in my back and she came with her forehead pressed against mine, eyes open, looking straight at me. I have thought about that moment every single day since.",
+      title: "She rode me slow",
+      body: "She straddled me and guided me inside her one inch at a time, watching my face. Then her lips were at my ear and she told me exactly what she wanted. I gave it to her. She rode me until her nails were in my back and her thighs were shaking and she came with her forehead pressed against mine, eyes open, looking straight at me. I have thought about that look every single day since.",
       isPublic: true,
     },
   });
@@ -791,7 +791,7 @@ async function main() {
       userId: user3.id,
       category: StoryCategory.REAL_TALK,
       title: "He watched and didn't move",
-      body: "I told him to sit in the chair and not touch me. He did. I used the Luna Mini on myself while he watched from across the room, fully dressed, completely still. The only thing that moved was his jaw — tight, controlled. I came twice. Hard. When I finally said his name he crossed the room in two steps and we didn't sleep until morning. The watching was the best foreplay of my life.",
+      body: "I used the Luna Mini on myself while he sat in the chair fully dressed and watched. I came twice while he stayed completely still — only his jaw moved, tight and controlled. When I finally said his name he crossed the room in two steps and kissed me like he'd been holding it the entire time. We didn't sleep until morning. Being watched like that was the best foreplay I have ever had.",
       isPublic: true,
     },
   });
@@ -801,7 +801,7 @@ async function main() {
       userId: user1.id,
       category: StoryCategory.WOMEN_SAY,
       title: "I took her apart slowly",
-      body: "I warmed the Silk Glide between my palms, kissed her neck, and worked my way down until she was gripping the headboard with both hands. I used my fingers first — slow, deep, watching every breath. Then my mouth. She said stop. She said don't stop. She said my name in a voice I had never heard before. When she finally came it was long and full and she pulled me up immediately and kissed me so hard I tasted her lipstick for an hour.",
+      body: "My mouth was on her before she'd finished pulling me close. I worked down slowly, hands on her thighs keeping them open, and when my tongue found what it was looking for she gripped the headboard and said stop and don't stop in the same breath. I used the Silk Glide next, fingers deep, until she came in a way that sounded like relief. She pulled me up and kissed me hard and didn't let go for a long time.",
       isPublic: true,
     },
   });
@@ -811,7 +811,7 @@ async function main() {
       userId: user2.id,
       category: StoryCategory.WOMEN_SAY,
       title: "On the kitchen counter",
-      body: "It started with a kiss that wasn't supposed to go anywhere. He lifted me onto the kitchen counter and stood between my knees and the kissing turned into hands and the hands turned into him sliding into me right there — no bedroom, no planning, no buildup. Just the two of us and the sound of the city outside and his mouth on my collarbone while I held the back of his neck and let myself be completely loud about it.",
+      body: "He lifted me onto the counter mid-kiss and stepped between my knees and was inside me before either of us decided to do it. No bedroom, no plan — just his mouth on my collarbone and my legs locked around him and the sound of the city outside while I let myself be completely loud. We stood in the kitchen afterward not speaking, just catching breath, and then he kissed me again and we went to the bedroom to do it properly.",
       isPublic: true,
     },
   });
@@ -820,8 +820,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.FOR_COUPLES,
-      title: "We used it together",
-      body: "She put the Vibe Ring on me herself — took her time doing it, eyes on mine. Then she climbed on top and when she sank down and the vibration hit us both simultaneously, her mouth fell open. We moved together finding the angle where it buzzed against her perfectly and her hands braced on my chest and she came before I did, loudly, and the feeling of her around me when she did meant I wasn't far behind. We lay there completely wrecked afterward. It was glorious.",
+      title: "The Vibe Ring hit us both",
+      body: "She put the Vibe Ring on me herself, slow and deliberate. Then she climbed on and sank down and when the vibration hit us both at once her mouth opened and she made a sound I had never heard before. We found the angle where it buzzed against her perfectly and I watched her lose control completely while I held on as long as I could. She came first, loudly. I followed immediately. We lay completely wrecked for half an hour.",
       isPublic: true,
     },
   });
@@ -831,7 +831,7 @@ async function main() {
       userId: user1.id,
       category: StoryCategory.FOR_COUPLES,
       title: "I made him beg",
-      body: "I warmed the Ignite lube and used it on him with both hands — long, slow, deliberate. Every time his breathing changed I slowed down. He grabbed my wrist twice. Both times I moved it gently away. When I finally let him come it was with my mouth and he said my name in a voice that didn't sound like him at all. Afterward he pulled me close and said, 'where did you learn that?' I told him: feelmore. He ordered two more products that same night.",
+      body: "I used the Ignite lube on him with both hands — long, slow strokes, adjusting every time his breathing changed. He grabbed my wrist twice. Both times I moved it away. When I finally took him in my mouth he said my name in a voice I had never heard before. Afterward he pulled me close and said: where did you learn that? I told him: feelmore. He ordered two more products before we fell asleep.",
       isPublic: true,
     },
   });
@@ -840,8 +840,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.TIPS,
-      title: "Always lube. Always.",
-      body: "I don't care how ready you think you are — Silk Glide changes the entire experience. Everything is smoother, deeper, more sensitive. Your partner feels different. You feel different. It removes friction and replaces it with something that makes every movement land twice as hard. I use it every single time now. My body has never been happier and neither has anyone I've been in bed with.",
+      title: "Always lube. Every time.",
+      body: "Silk Glide changes everything — I don't care how ready you think you are. Every movement lands deeper, softer, more. Your partner feels different. You feel different. The first time I used it properly I actually gasped at the difference. I use it every single time now. My body has not been the same since and neither has anyone I've been in bed with.",
       isPublic: true,
     },
   });
@@ -850,8 +850,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.TIPS,
-      title: "The G-Spot Pro: a guide",
-      body: "Curve it toward your belly button. Mode 3. Do not move it — just hold it there and breathe. Your body will start responding within ninety seconds if you stay still and let it. When your hips start moving on their own, switch to mode 5. Then hold on. I have used a lot of toys. Nothing finds that spot with this accuracy. It is almost unreasonably good.",
+      title: "G-Spot Pro: hold still",
+      body: "Curve it toward your belly button, mode 3, and hold completely still. That's it. Your body starts responding in under two minutes if you stop chasing and just breathe. When your hips begin moving on their own, go to mode 5. Then hold on. Nothing I have used finds that spot with this precision. The first time it hit right I had to cover my own mouth.",
       isPublic: true,
     },
   });
@@ -861,7 +861,7 @@ async function main() {
       userId: user1.id,
       category: StoryCategory.TIPS,
       title: "Start low, go slow",
-      body: "New to vibrators? Stay on setting 1 for the first ten minutes. Your body needs to calibrate — to learn to receive before it knows how to chase. By the time you move up a level, every nerve ending is awake and begging. The Luna Mini on setting 3 after a slow build will make your toes curl and your back arch in a way that feels almost too good to be real. Build the tension. The release is worth it.",
+      body: "Stay on setting 1 for the first ten minutes — I know it feels like nothing, stay there. Your body is waking up, every nerve calibrating. By the time you move to setting 3 you will understand why people say this changes them. The Luna Mini on a slow build makes your back arch in a way that feels almost too much. The tension is the whole point. The release is worth every second of the wait.",
       isPublic: true,
     },
   });
