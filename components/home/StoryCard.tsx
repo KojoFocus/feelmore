@@ -19,10 +19,10 @@ const categoryLabels: Record<string, string> = {
 }
 
 const categoryBg: Record<string, string> = {
-  REAL_TALK:   'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=600&h=500&fit=crop&q=80',
+  REAL_TALK:   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop&q=80',
   WOMEN_SAY:   'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&h=500&fit=crop&q=80',
   FOR_COUPLES: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=500&fit=crop&q=80',
-  TIPS:        'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=600&h=500&fit=crop&q=80',
+  TIPS:        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=500&fit=crop&q=80',
 }
 
 function timeAgo(date: Date | string): string {
@@ -45,7 +45,7 @@ export default function StoryCard({ story }: { story: Story }) {
       {/* Full background image — brighter on right, shows texture */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${bg})`, filter: 'brightness(0.6) saturate(0.8)' }}
+        style={{ backgroundImage: `url(${bg})`, filter: 'brightness(0.65) saturate(1.1)' }}
       />
       {/* Dark left for text readability, fades right to reveal image */}
       <div
