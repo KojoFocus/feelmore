@@ -59,10 +59,10 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/shop/${product.slug}`}
-      className="flex-shrink-0 rounded-[16px] overflow-hidden block"
-      style={{ backgroundColor: '#F5F2EE', width: 118 }}
+      className="flex-shrink-0 rounded-[14px] overflow-hidden block"
+      style={{ backgroundColor: '#F5F2EE', width: 88 }}
     >
-      <div className="relative w-full overflow-hidden" style={{ height: 100, backgroundColor: '#F5F2EE' }}>
+      <div className="relative w-full overflow-hidden" style={{ height: 80, backgroundColor: '#F5F2EE' }}>
         {imgUrl && (
           <img
             src={imgUrl}
@@ -72,33 +72,33 @@ function ProductCard({ product }: { product: Product }) {
         )}
         {badge && (
           <span
-            className="absolute top-2 left-2 text-[7px] font-bold text-white px-1.5 py-[2px] rounded-full tracking-wider uppercase"
-            style={{ backgroundColor: '#C9923A' }}
+            className="absolute top-1.5 left-1.5 text-[6px] font-bold text-white px-1 py-[2px] rounded-full tracking-wider uppercase"
+            style={{ backgroundColor: '#A66A86' }}
           >
             {badge}
           </span>
         )}
       </div>
 
-      <div style={{ padding: '8px 10px 11px' }}>
-        <p className="font-semibold truncate leading-snug" style={{ fontSize: 11, color: '#1A1A1A' }}>
+      <div style={{ padding: '6px 8px 8px' }}>
+        <p className="font-semibold truncate leading-snug" style={{ fontSize: 10, color: '#1A1A1A' }}>
           {product.name}
         </p>
         {product.tagline && (
-          <p className="truncate mt-0.5" style={{ fontSize: 9, color: '#9CA3AF' }}>
+          <p className="truncate mt-0.5" style={{ fontSize: 8, color: '#9CA3AF' }}>
             {product.tagline}
           </p>
         )}
-        <div className="flex items-center justify-between mt-2">
-          <span className="font-bold" style={{ fontSize: 10, color: '#C9923A' }}>
+        <div className="flex items-center justify-between mt-1.5">
+          <span className="font-bold" style={{ fontSize: 9, color: '#A66A86' }}>
             {product.currency} {Number(product.price).toLocaleString()}
           </span>
           <button
             onClick={(e) => e.preventDefault()}
-            className="rounded-[6px]"
-            style={{ padding: 5, backgroundColor: 'rgba(201,146,58,0.12)' }}
+            className="rounded-[5px]"
+            style={{ padding: 4, backgroundColor: 'rgba(166,106,134,0.12)' }}
           >
-            <ShoppingCart size={10} color="#C9923A" />
+            <ShoppingCart size={9} color="#A66A86" />
           </button>
         </div>
       </div>
@@ -108,14 +108,14 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function ProductRow({ products }: { products: Product[] }) {
   return (
-    <section className="flex-shrink-0" style={{ marginTop: 10 }}>
-      <div className="flex items-center justify-between px-5 mb-3">
-        <p style={{ color: '#ffffff', fontSize: 15, fontWeight: 600 }}>Explore quietly</p>
-        <Link href="/shop" style={{ color: '#C9923A', fontSize: 13, fontWeight: 500 }}>
+    <section className="flex-shrink-0" style={{ marginTop: 8 }}>
+      <div className="flex items-center justify-between px-5 mb-2">
+        <p style={{ color: '#ffffff', fontSize: 13, fontWeight: 600 }}>Explore quietly</p>
+        <Link href="/shop" style={{ color: '#A66A86', fontSize: 12, fontWeight: 500 }}>
           See all ›
         </Link>
       </div>
-      <div className="flex gap-2.5 overflow-x-auto scrollbar-hide px-5 pb-1">
+      <div className="flex gap-2 overflow-x-auto scrollbar-hide px-5 pb-1">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

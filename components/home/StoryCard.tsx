@@ -42,15 +42,15 @@ export default function StoryCard({ story }: { story: Story }) {
 
   return (
     <div className="relative overflow-hidden h-full" style={{ borderRadius: 18, backgroundColor: cardBg }}>
-      {/* Texture image on the right half */}
+      {/* Full background image */}
       <div
-        className="absolute right-0 top-0 bottom-0 w-[52%] bg-cover bg-center"
-        style={{ backgroundImage: `url(${bg})`, filter: 'brightness(0.45) saturate(0.5)' }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bg})`, filter: 'brightness(0.3) saturate(0.45)' }}
       />
-      {/* Gradient: solid left → fade right */}
+      {/* Gradient overlay: dark bottom, slight vignette */}
       <div
         className="absolute inset-0"
-        style={{ background: `linear-gradient(to right, ${cardBg} 40%, rgba(16,12,10,0.85) 60%, rgba(16,12,10,0.2) 100%)` }}
+        style={{ background: `linear-gradient(160deg, rgba(16,12,10,0.55) 0%, rgba(16,12,10,0.15) 40%, rgba(16,12,10,0.85) 100%)` }}
       />
 
       <div className="relative h-full flex flex-col px-5 py-4">
@@ -66,7 +66,7 @@ export default function StoryCard({ story }: { story: Story }) {
 
         {/* Body — large, fills space */}
         <div className="flex-1 min-h-0 overflow-hidden">
-          <p style={{ color: '#ffffff', fontSize: 20, fontWeight: 400, lineHeight: 1.5 }}>
+          <p style={{ color: '#ffffff', fontSize: 22, fontWeight: 400, lineHeight: 1.55, letterSpacing: '-0.01em' }}>
             {story.body}
           </p>
         </div>
