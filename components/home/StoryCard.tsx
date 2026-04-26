@@ -66,7 +66,7 @@ export default function StoryCard({ story }: { story: Story }) {
 
         {/* Body — large, fills space */}
         <div className="flex-1 min-h-0 overflow-hidden">
-          <p style={{ color: '#ffffff', fontSize: 22, fontWeight: 400, lineHeight: 1.55, letterSpacing: '-0.01em' }}>
+          <p style={{ color: '#ffffff', fontSize: 17, fontWeight: 400, lineHeight: 1.6 }}>
             {story.body}
           </p>
         </div>
