@@ -87,7 +87,7 @@ function StoryCircle({
           )}
         </div>
       </div>
-      <span className="text-[9px] text-gray-600 font-medium text-center w-[72px] leading-tight">{label}</span>
+      <span className="text-[10px] font-medium text-center w-[72px] leading-tight" style={{ color: 'rgba(255,255,255,0.55)' }}>{label}</span>
     </button>
   )
 }
@@ -101,7 +101,7 @@ export default function StoriesRow({ stories = [] }: { stories: Story[] }) {
   return (
     <>
       <section className="mt-4 flex-shrink-0">
-        <p className="text-[10px] font-semibold text-gray-700 uppercase tracking-[0.12em] mb-3 px-5">Stories</p>
+        <p className="mb-3 px-5" style={{ color: '#ffffff', fontSize: 15, fontWeight: 600 }}>Stories</p>
         {/* px-5 on the scroll container so the border wrapper is never clipped */}
         <div className="flex gap-4 overflow-x-auto scrollbar-hide px-5 pb-1">
           <StoryCircle label="Your story" active={false} />

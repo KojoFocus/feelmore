@@ -60,18 +60,16 @@ function ProductCard({ product }: { product: Product }) {
     <Link
       href={`/shop/${product.slug}`}
       className="flex-shrink-0 rounded-[16px] overflow-hidden block"
-      style={{ backgroundColor: bgColor, width: 118 }}
+      style={{ backgroundColor: '#F5F2EE', width: 118 }}
     >
-      <div className="relative w-full overflow-hidden" style={{ height: 96, backgroundColor: bgColor }}>
+      <div className="relative w-full overflow-hidden" style={{ height: 100, backgroundColor: '#F5F2EE' }}>
         {imgUrl && (
           <img
             src={imgUrl}
             alt={product.name}
             className="w-full h-full object-cover"
-            style={{ opacity: 0.72, mixBlendMode: 'luminosity' }}
           />
         )}
-        <div className="absolute inset-x-0 bottom-0 h-8" style={{ background: `linear-gradient(to top, ${bgColor}, transparent)` }} />
         {badge && (
           <span
             className="absolute top-2 left-2 text-[7px] font-bold text-white px-1.5 py-[2px] rounded-full tracking-wider uppercase"
@@ -82,13 +80,17 @@ function ProductCard({ product }: { product: Product }) {
         )}
       </div>
 
-      {/* Compact info */}
-      <div style={{ padding: '8px 12px 12px' }}>
-        <p className="text-white/85 font-semibold truncate leading-snug" style={{ fontSize: 11 }}>
+      <div style={{ padding: '8px 10px 11px' }}>
+        <p className="font-semibold truncate leading-snug" style={{ fontSize: 11, color: '#1A1A1A' }}>
           {product.name}
         </p>
+        {product.tagline && (
+          <p className="truncate mt-0.5" style={{ fontSize: 9, color: '#9CA3AF' }}>
+            {product.tagline}
+          </p>
+        )}
         <div className="flex items-center justify-between mt-2">
-          <span className="font-bold" style={{ fontSize: 11, color: '#C9923A' }}>
+          <span className="font-bold" style={{ fontSize: 10, color: '#C9923A' }}>
             {product.currency} {Number(product.price).toLocaleString()}
           </span>
           <button
@@ -108,8 +110,8 @@ export default function ProductRow({ products }: { products: Product[] }) {
   return (
     <section className="flex-shrink-0" style={{ marginTop: 14 }}>
       <div className="flex items-center justify-between px-5 mb-3">
-        <p className="text-[10px] font-semibold text-gray-700 uppercase tracking-[0.12em]">Explore quietly</p>
-        <Link href="/shop" className="text-[11px] font-medium" style={{ color: '#C9923A' }}>
+        <p style={{ color: '#ffffff', fontSize: 15, fontWeight: 600 }}>Explore quietly</p>
+        <Link href="/shop" style={{ color: '#C9923A', fontSize: 13, fontWeight: 500 }}>
           See all ›
         </Link>
       </div>
