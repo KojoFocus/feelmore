@@ -8,7 +8,7 @@ export default function Header() {
     >
       <span className="text-[22px] font-bold tracking-tight">
         <span style={{ color: '#ffffff' }}>feel</span>
-        <span style={{ color: '#C9923A' }}>more.</span>
+        <span style={{ color: '#A66A86' }}>more.</span>
       </span>
       <button className="flex items-center justify-center">
         <MessageCircle size={22} strokeWidth={1.5} color="rgba(255,255,255,0.7)" />

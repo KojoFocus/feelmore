@@ -942,142 +942,182 @@ async function main() {
   const series1 = await prisma.eroticaSeries.create({
     data: {
       authorId: user1.id,
-      title: "The Lagos Affair",
-      slug: "the-lagos-affair",
-      description: "A high-flying Lagos executive crosses paths with her mysterious new neighbour. What begins as tension becomes something neither of them can resist.",
-      genre: "Romance",
-      coverImage: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=600&h=900&fit=crop&q=80",
+      title: "The Understanding",
+      slug: "the-understanding",
+      description: "Serwaa and Kojo haven't spoken in three years. One hotel room, two nights, and everything they refused to say finally comes out.",
+      genre: "Steamy",
+      coverImage: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=900&fit=crop&q=80",
       isPublic: true,
-      isComplete: false,
+      isComplete: true,
     },
   });
 
   const ep1_1 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series1.id,
-      title: "The New Neighbour",
-      slug: "the-new-neighbour",
+      title: "How It Starts",
+      slug: "how-it-starts",
       episodeNum: 1,
-      readTime: 8,
+      readTime: 9,
       isFree: true,
-      body: `The moving truck arrived at six in the morning, which Adaeze found deeply inconsiderate.
+      body: `Three years is a long time. Long enough for the memory of someone to become manageable — almost.
 
-She stood at her window in her silk robe, coffee in hand, watching men carry boxes into the apartment directly across the courtyard. Lagos was many things — loud, brilliant, relentless — but it had never invaded her mornings like this.
+Serwaa had almost managed it when her phone lit up on a Tuesday night with his name.
 
-Then he stepped out.
+Just in Accra for two days. Are you around?
 
-Tall. Dark shirt with the sleeves rolled to the elbow. He directed the movers with a quiet authority that she recognised instantly — the kind that doesn't need volume to be felt.
+She stared at the message for a long time. She knew what it meant. They both knew what it meant. They had always been honest about that, at least — about what they were to each other, even when they couldn't agree on anything else.
 
-He must have sensed her watching. He looked up.
+She typed back: Where are you staying?
 
-Adaeze did not move. She held his gaze for exactly three seconds, then turned away and refilled her coffee.
+He sent a hotel name. A nice one, central. She knew the bar.
 
-She was not the kind of woman who stared at men. She was the kind of woman men stared at.
+She told herself she was just going for a drink.
 
-But for the rest of the morning, she found herself standing near that window more than usual.
+She wore the red dress anyway.
 
-His name, she would learn from the building manager that evening, was Kofi. He was from Accra originally. A consultant. Moving to Lagos for a project that would take "at least a year."
+He was already there when she arrived — sitting at the far end of the bar, which was something he'd always done, positioning himself to see the door. He stood when he saw her, and she felt the familiar pull — the way he looked at her. Like she was the only interesting thing in any room.
 
-At least a year, she thought, and felt something she hadn't felt in a long time stir quietly somewhere beneath her professionalism.
+"You look —" He stopped. "Hi."
 
-She told herself it was just curiosity.
+"Hi."
 
-She almost believed it.`,
+They sat. They ordered. They talked about surface things for maybe fifteen minutes — his work, her work, the city. And then he set down his glass and looked at her the way he always eventually looked at her, and said:
+
+"Are we going to pretend this isn't what it is?"
+
+"No," she said.
+
+He paid the bill.
+
+They took the lift up in silence, standing close but not touching — a specific restraint that she knew meant he wanted to, badly. The moment the door closed behind them she turned, and he was already there, his hands cupping her face, and the first kiss was slow and immediately familiar — the particular pressure of his mouth, the way he breathed in when they kissed, like he was trying to hold it.
+
+"I missed you," he said against her mouth.
+
+He undressed her carefully — unhooking her dress, letting it fall, taking his time in a way that made her feel seen. She worked on his shirt buttons while he kissed her neck, the place below her ear that made her breath catch.
+
+"Still," he murmured against her skin. Like he was noting it for later.
+
+When they came together it was slow at first — the particular slowness of relearning — and then it wasn't. By the end she had her fingers in his hair and her face pressed against his neck, saying things she hadn't planned to say.
+
+Afterward he lay with his arm around her, her head on his chest.
+
+"Two days isn't enough," he said.
+
+"It never was," she said.`,
     },
   });
 
   const ep1_2 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series1.id,
-      title: "The Lift",
-      slug: "the-lift",
+      title: "The Rules We Break",
+      slug: "the-rules-we-break",
       episodeNum: 2,
-      readTime: 10,
+      readTime: 11,
       isFree: true,
-      body: `They met properly in the lift on a Thursday evening.
+      body: `They ordered room service at midnight and ate in bed, which felt both domestic and completely removed from real life — a bubble, Serwaa thought. That was what this had always been.
 
-Adaeze had come home late — board meeting, then drinks she hadn't wanted but couldn't decline — and her heels were in her hand when the lift doors opened and he was already inside.
+"We should have rules," she said.
 
-"I was wondering when we'd actually meet," he said. His voice was lower than she'd expected. Accented with something that wasn't quite British, wasn't quite Ghanaian — somewhere in between, shaped by too many cities.
+"Rules." He repeated the word like he was trying its shape.
 
-"Adaeze," she said, and offered her hand like she was in a boardroom.
+"So neither of us does something stupid."
 
-He took it. "Kofi." He didn't let go immediately. Not inappropriately — just a half-second longer than necessary. Just enough for her to notice.
+He looked at her steadily before speaking — he had always done that, actually looked before he answered. "What would stupid look like?"
 
-The lift moved. They watched the floor numbers climb.
+"Feelings," she said simply.
 
-"You were watching me move in," he said. Not an accusation. A statement.
+"No feelings," he agreed.
 
-"I was watching the truck block my parking spot."
+They shook on it. He immediately took the last piece of food from her plate.
 
-He smiled. It changed his whole face. "Of course."
+"Kojo."
 
-The lift stopped at her floor. She stepped out, then turned. He was still watching her, leaning against the back wall with an ease that suggested he was someone who was comfortable taking up space.
+"Mm."
 
-"Welcome to the building," she said.
+"That's a feeling."
 
-"Thank you for not complaining about the noise."
+"That's hunger."
 
-She walked down the corridor to her apartment, unlocked the door, and stood for a moment with her back against it in the dark.
+She laughed — couldn't stop it — and he watched her with that expression she'd also missed: steady, fond, like her laughter was something he wanted to collect.
 
-She pressed her palm flat against her sternum, feeling her own heartbeat, which was doing something it had no business doing.
+"See," she said. "That. That's the problem."
 
-This, she told herself, was a problem.`,
+He set the plate down and moved toward her across the bed. "We have one more night," he said, "and you're thinking about rules."
+
+He kissed her and the conversation ended.
+
+By morning they had broken most of them. Not in ways that could be named cleanly. In the way of two people who fit together in a specific way that no amount of time seems to erase — in the way his hands knew exactly where to go, in the way she moved against him with an ease that felt less like desire and more like memory coming back.
+
+She rode him in the grey dawn light with his hands steady at her hips, his eyes on her face, saying her name just often enough that it didn't stop meaning something. When she came it was hard and sudden and she dropped her forehead to his and they stayed like that — breathing, eyes closed, entirely present.
+
+"No feelings," he said softly, after.
+
+"Shut up," she said, and he did.`,
     },
   });
 
   const ep1_3 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series1.id,
-      title: "The Dinner",
-      slug: "the-dinner",
+      title: "What We Don't Say",
+      slug: "what-we-dont-say",
       episodeNum: 3,
-      readTime: 12,
+      readTime: 13,
       isFree: false,
-      body: `He knocked on her door at seven on a Saturday with a bottle of Merlot and an expression that suggested he was not entirely sure this was a good idea either.
+      body: `His flight was at six. She woke at four and lay still, listening to him breathe, cataloguing things she refused to admit she was cataloguing.
 
-"I made rice," he said. "I made too much of it. It seemed rude not to knock."
+He woke soon after. She felt him shift, then still.
 
-Adaeze looked at the wine. She looked at him. She was in a lounge set — comfortable, not dressed for company — and she had spent absolutely no time thinking about this moment.
+"I know you're awake," he said.
 
-"Come in," she said, and stepped aside.
+"I know."
 
-Her apartment was full of things she'd curated carefully: art she'd bought at markets from artists whose names she knew, books stacked with intention, a record player she actually used. He moved through it like someone reading a room rather than just being in one.
+"Serwaa."
 
-"You like Afrobeats," he said, looking at the records.
+"Don't," she said quietly. Without edge.
 
-"I like music that makes you feel something."
+He was silent. Then: "Okay."
 
-He chose a record without asking. Something slow. She didn't stop him.
+But he turned toward her, and what followed was different from the nights before — slower, more deliberate. His hands moved like they were memorising. She pressed her palm against his chest and felt his heartbeat and let herself feel everything without naming it.
 
-They ate at her kitchen counter because the dining table had become her second desk. He told her about Accra — about the water, the heat, the way the city smelled different from any other. She told him about growing up in Enugu, coming to Lagos at twenty-three with nothing but ambition and a single good blazer.
+He kissed down her body slowly, starting at her throat, taking his time at every place that made her react, working south until she was gripping the sheet and saying his name in a way she hadn't planned to. He stayed there, unhurried, until she pulled him back up by the shoulders.
 
-"Do you still have the blazer?" he asked.
+When they moved together it was the kind of slow that borders on unbearable. He looked at her the whole time. She let him.
 
-"I have eight of them now."
+Afterward she made coffee while he showered and packed. They sat at the hotel window with two cups, watching the city assemble itself below.
 
-He laughed. Really laughed. And she felt something in her chest relax that had been held tight for so long she'd forgotten it was there.
+"When does work bring you back to Accra?" he asked.
 
-Later, standing in her kitchen doing the washing up side by side, his arm brushed hers. Neither of them moved away.
+She knew what he was doing. She let him. "March. Maybe."
 
-"Adaeze," he said quietly.
+"March," he repeated. Like he was saving it.
 
-"Yes."
+When it was time, he stood. She walked with him to the door the way you do when you're not ready. He kissed her once, properly. Then put his forehead against hers.
 
-He turned to look at her. Just looked, for a long moment, like he was working something out.
+"March," he said.
 
-Then he handed her a glass to dry, and said nothing else, and she understood perfectly that this was patience — deliberate and careful — and that it was the most seductive thing she had ever encountered.`,
+She closed the door and stood with her back against it.
+
+She thought about rules. About bubbles. About the specific difficulty of loving someone you refuse to admit you love.
+
+She opened her phone and typed: Let me know when you land.
+
+She already knew what it meant.
+
+She sent it anyway.`,
     },
   });
 
   const series2 = await prisma.eroticaSeries.create({
     data: {
-      authorId: user3.id,
-      title: "Midnight Between Us",
-      slug: "midnight-between-us",
-      description: "Two strangers. One beach house. Seven days to figure out what they are to each other — and why they can't seem to stay apart.",
-      genre: "Steamy",
-      coverImage: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=900&fit=crop&q=80",
+      authorId: user2.id,
+      title: "Her Education",
+      slug: "her-education",
+      description: "At 29, Abena decides to stop performing pleasure and start feeling it. Everything changes when she does.",
+      genre: "Romance",
+      coverImage: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=900&fit=crop&q=80",
       isPublic: true,
       isComplete: true,
     },
@@ -1086,231 +1126,239 @@ Then he handed her a glass to dry, and said nothing else, and she understood per
   const ep2_1 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series2.id,
-      title: "Day One",
-      slug: "day-one",
+      title: "What I Ordered",
+      slug: "what-i-ordered",
       episodeNum: 1,
-      readTime: 7,
+      readTime: 8,
       isFree: true,
-      body: `The booking mistake was the agency's fault. Maame was certain of that.
+      body: `The package arrived in plain discreet packaging, exactly as promised, and Abena stood at her door for a moment before bringing it inside.
 
-She'd reserved the beach house for the week — confirmed, paid, reference number saved in two places — and had arrived with her suitcase and her plan for seven days of absolute solitude to find a man already standing barefoot in the kitchen making eggs.
+She was twenty-nine years old. She had been in four relationships. She had had sex — plenty of it — and had performed pleasure competently, sometimes enthusiastically, while privately wondering what the real fuss was.
 
-He turned around. "You must be the other half of the double-booking."
+A week ago, sitting in her best friend's living room at midnight, a glass of wine in her hand, she said this out loud for the first time.
 
-He was unfairly handsome. This was not something Maame had needed to know on day one of her healing retreat.
+"Wait," Yaa said. "You mean you've never actually—"
 
-"I am the correct booking," she said. "You're the other half."
+"I'm not saying never. I'm saying not reliably. Not because of someone else."
 
-"Nana." He held out a hand.
+Yaa looked at her with an expression that was equal parts sympathy and outrage. Then she reached for her phone. "I'm sending you a link."
 
-"Maame." She did not shake it. "I'm calling the agency."
+The Lelo Sona 2. Discreet, quiet, highly reviewed. The comment section, Yaa had warned, was not for the faint-hearted.
 
-The agency, it turned out, was closed until Monday. It was Thursday.
+Now Abena sat on her bed with the box in her lap.
 
-They stood in the kitchen and looked at each other with the particular energy of two people calculating whether they could survive a week of proximity.
+She read the instructions twice — she read everything twice — then set her phone to do not disturb, turned off the overhead light, and lay back in her own apartment on a quiet Thursday night with nowhere to be and no one to perform for.
 
-The house had two bedrooms, a shared living room, and one spectacular ocean-facing deck.
+What happened next surprised her.
 
-"Ground rules," Maame said.
+Not the sensation itself. She had read about it, she was prepared. What surprised her was the sound she made. She hadn't known her own body could make that sound. Hadn't known she was capable of that particular sudden overwhelming blinding—
 
-"Ground rules," he agreed, and she was annoyed to find that he seemed unbothered. Amused, even. Like a man who was used to situations resolving themselves in his favour.
+Afterward she lay very still for a long time.
 
-She took the bedroom with the better view. She figured she'd earned something.
+Then she picked up her phone and texted Yaa a single emoji: 🔥
 
-That night, she sat on the deck alone, listening to the waves, and tried to remember what she'd come here to think about.
+Yaa replied instantly: I TOLD YOU.
 
-She found it oddly hard to concentrate.`,
+Abena stared at the ceiling and thought: twenty-nine years. She had been living in a country where she didn't speak the language, and she had just said something true in it for the first time.
+
+She wasn't going back.`,
     },
   });
 
   const ep2_2 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series2.id,
-      title: "Day Three",
-      slug: "day-three",
+      title: "The Ask",
+      slug: "the-ask",
       episodeNum: 2,
-      readTime: 11,
+      readTime: 10,
       isFree: true,
-      body: `By day three they had established a rhythm that felt, alarmingly, comfortable.
+      body: `His name was Kweku. They had been seeing each other for two months — easy, uncomplicated, the kind of thing that doesn't ask too much of either person.
 
-He cooked breakfast. She made coffee — strong enough to strip paint, he said, and drank three cups anyway. They divided the deck into unspoken zones and spent long afternoons in a companionable silence that had no business being this easy between two people who were technically strangers.
+He was attentive. She had, until recently, been satisfied by his attentiveness.
 
-It was the swim that changed things.
+That had changed.
 
-Maame had gone in early, before he was up, because she wanted the ocean to herself. She'd made it fifty metres out when she heard the water move behind her and turned to find him pulling up alongside her with the efficient stroke of someone who'd grown up near water.
+She knew now what her body was capable of. She knew the language. She just hadn't tried to speak it with someone else in the room.
 
-They swam without speaking. In parallel, in the low morning light, out past the break and back again.
+They were lying in his bed on a Saturday, the afternoon light coming through the curtains, and he was kissing her shoulder in the comfortable, pleasant way that used to be enough.
 
-When they waded in, breathless and dripping, the sun had come fully up and everything looked different — sharper, more vivid, the way things look when your body has been fully awake.
+She turned toward him.
 
-He pushed his wet hair back. She was acutely aware of the water on his shoulders, the steady rise and fall of his chest.
+"I want to tell you something," she said.
 
-"You didn't mention you could swim like that," she said.
+He propped himself up to look at her. Kweku had the kind of face that was naturally open, un-alarmed.
 
-"You didn't ask."
+"Okay," he said.
 
-They stood at the shoreline, close enough that she could feel the warmth coming off him despite the cool water.
+"When we're together, I want you to touch me here." She took his hand. Moved it. "Not quickly. Slowly. For a long time. Before anything else."
 
-"Nana."
+He looked at her steadily. Not embarrassed. Just listening.
 
-"Maame."
+"And I want to tell you when to change," she said. "And I want to say what feels good while it's happening. Out loud."
 
-Neither of them moved for a long moment.
+"Abena." He said her name like he meant it. "Yes. Please."
 
-Then he said, "I'll make breakfast," and turned and walked up the beach, and she stood there in the surf and thought: this is going to be a problem.
+She laughed, unexpectedly.
 
-She was right.`,
+He kissed her. And then, for the first time in two months, they did not rush past anything.
+
+He followed her instructions with a patience that made her feel completely seen. She said what she needed. He did it. When she asked for more pressure, more time, a different angle, he adjusted without pride, as if her pleasure was the only thing that mattered.
+
+It was a long afternoon.
+
+When it was over she lay completely undone and thought: this is what it was supposed to feel like. This whole time. This is what I was supposed to be able to ask for.`,
     },
   });
 
   const ep2_3 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series2.id,
-      title: "The Last Night",
-      slug: "the-last-night",
+      title: "What She Knows Now",
+      slug: "what-she-knows-now",
       episodeNum: 3,
-      readTime: 14,
+      readTime: 12,
       isFree: false,
-      body: `On the last night, neither of them pretended to sleep.
+      body: `Three months later, Abena kept a list in the notes app on her phone.
 
-They sat on the deck in the dark — the ocean invisible but audible, enormous and close — and drank the last of the wine they'd been rationing since day four without discussing it.
+Not public. Just honest: things I know now that I didn't know before.
 
-"Tomorrow we go back," Maame said.
+The list was longer than she expected.
 
-"Yes."
+She knew her body responded differently depending on the time of day — more slowly in the morning, more intensely after ten at night. She knew that the thing that worked fastest alone was not what she wanted when Kweku was there. She knew that talking during sex — actually talking, not performing — made everything more real and sometimes almost too much.
 
-The word landed between them with weight.
+She knew that almost too much was where she wanted to live.
 
-"Different cities," she said.
+On a Friday night Kweku came over and they ate and talked about nothing and later he reached for her with that combination of intention and gentleness that she had taught him — and she had let herself be taught by him too. Because it went both ways. She had told him what she wanted. He had told her things too — things he'd never said to anyone, he said. She had received them the same way he'd received hers: without judgment, with interest.
 
-"Yes."
+That night she brought the Sona out of the drawer. She had mentioned it weeks ago and he had been curious, not threatened. What followed was something she had no adequate words for — his hands and hers and the vibration and his voice close against her ear, and then the long shaking arrival of something that felt less like an event and more like a door finally swinging open.
 
-"Different lives."
+Afterward he held her while she laughed helplessly.
 
-He was quiet for a moment. Then: "Do they have to be?"
+"Okay?" he said.
 
-She turned to look at him. In the dark, she could see the shape of his jaw, the steadiness in his eyes. He was not a man who said things carelessly. She had learned that in seven days.
+"I've wasted so much time," she said, still laughing.
 
-"Nana."
+He pulled her closer. "You're twenty-nine. You have time."
 
-"I'm not trying to complicate things," he said. "I'm trying to — I don't know what I'm trying to do. Something true. Something honest."
-
-Maame set down her glass.
-
-She had come here to heal from someone who had not been honest with her. Who had taken up space in her life without ever fully arriving in it.
-
-She looked at this man — this stranger who was no longer strange — and felt something quietly enormous shift in her chest.
-
-"Come here," she said.
-
-He moved. Crossed the space between their chairs in one motion. She stood to meet him, and when he kissed her it was not urgent or desperate — it was slow and full of intention, like every word he'd said all week, like someone who meant it completely.
-
-The ocean kept moving in the dark below.
-
-They had all night.
-
-They used it.`,
+She pressed her face into his chest and thought: yes. For the first time in her life, she felt like she did.`,
     },
   });
 
   const series3 = await prisma.eroticaSeries.create({
     data: {
-      authorId: user2.id,
-      title: "The Couple's Experiment",
-      slug: "the-couples-experiment",
-      description: "After five years together, Esi and Kwabena decide to try something new — and discover they barely knew each other at all.",
-      genre: "Romance",
+      authorId: user3.id,
+      title: "Room 14",
+      slug: "room-14",
+      description: "Two colleagues. One hotel room. A conference that changes everything about what they thought they were to each other.",
+      genre: "Steamy",
       coverImage: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=900&fit=crop&q=80",
       isPublic: true,
-      isComplete: false,
+      isComplete: true,
     },
   });
 
   const ep3_1 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series3.id,
-      title: "Year Five",
-      slug: "year-five",
+      title: "The Double Booking",
+      slug: "the-double-booking",
       episodeNum: 1,
-      readTime: 6,
+      readTime: 7,
       isFree: true,
-      body: `Five years is a long time to know someone. Long enough to know how they take their tea, what they look like in the middle of the night, the particular silence they make when they're thinking something they haven't decided to say yet.
+      body: `Ama had known Kofi for two years. Two years of the same office, same meetings, same deliberate professional distance she had maintained with real effort, because Kofi was the kind of man you notice immediately and then spend time trying to un-notice.
 
-Esi knew all of these things about Kwabena. She knew them so completely that sometimes she forgot to pay attention.
+She had been managing it successfully.
 
-That was the problem, she thought, watching him across their kitchen table on a Sunday morning. He was reading something on his phone and absently touching the back of his neck the way he always did when something was interesting. She'd watched him do that ten thousand times.
+Then the hotel conference app glitched, and they were standing at reception in Kumasi at 8pm being told that Room 14 was registered under both their names, and every other hotel within ten kilometers was full because of the festival.
 
-When had she stopped finding it interesting?
+"We're adults," Kofi said. To the ceiling, not to her.
 
-"We should try something," she said.
+"We are," Ama agreed. "It has two beds?"
 
-He looked up. He had learned, in five years, that when Esi said this, it was worth pausing whatever else he was doing.
+"King suite," the receptionist clarified unhelpfully.
 
-"What kind of something?"
+The room was large. Warm lighting, sitting area, one enormous bed. Ama went straight to the bathroom, changed into her sleep shirt, and told herself this was fine. Adults shared hotel rooms for work. With colleagues they had not thought about in any non-professional capacity.
 
-She had thought about this. She had, if she was honest, been thinking about it for weeks — ever since a conversation with a friend, a frank conversation, the kind women have at the end of a long dinner when the wine is nearly done.
+She came out to find him standing at the window, jacket off, looking at the city.
 
-"Something that isn't what we usually do," she said.
+"I can sleep on the couch," he said.
 
-He was quiet for a moment. Then he put his phone down.
+"It's a small couch."
 
-"Tell me," he said, and in the way he said it — unhurried, open — she remembered suddenly what she'd loved about him in the beginning. He had never been afraid of her directness. He had always moved toward it.
+"I've slept on worse."
 
-She felt something warm and tentative unfurl in her chest.
+She looked at him. He was being scrupulously correct — maintaining the professional distance they'd built together over two years — and she appreciated it.
 
-"Okay," she said. "Here's what I was thinking."`,
+The problem was she didn't want to appreciate it anymore.
+
+"Kofi," she said.
+
+He turned.
+
+She had no speech prepared. She just looked at him across the room and said: "I think we both know this stopped being just a work thing a while ago."
+
+He was still for a moment.
+
+Then he crossed the room.
+
+The professional distance, when it ended, ended all at once.`,
     },
   });
 
   const ep3_2 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series3.id,
-      title: "The Agreement",
-      slug: "the-agreement",
+      title: "What We've Been Doing",
+      slug: "what-weve-been-doing",
       episodeNum: 2,
-      readTime: 9,
+      readTime: 11,
       isFree: true,
-      body: `They wrote it down. That had been Kwabena's idea, and Esi had laughed at first, but then agreed, because there was something clarifying about making it real on paper.
+      body: `Later — much later — they lay side by side looking at the ceiling.
 
-The list was simple. Honest. A little embarrassing to write in the way that honest things sometimes are.
+"Two years," Ama said.
 
-Things we want more of. Things we've been curious about. Things we've never said out loud.
+"Two years," he agreed.
 
-They did it separately, then read each other's lists at the kitchen table with tea that went cold while they talked.
+"We wasted two years."
 
-There were surprises. Not shocking ones — not the kind that change everything — but the kind that made Esi look at him and think: five years, and I still don't know all of you. There's still more.
+He turned to look at her. He had several expressions she'd never seen from across a conference table — softer ones, unguarded. "I don't think of it as wasted," he said. "The waiting was part of it."
 
-She found this more exciting than she expected.
+"I didn't know you were waiting."
 
-"This one," he said, tapping the paper. "You've wanted this for how long?"
+"I know."
 
-"A while," she said.
+"Did you know I was?"
 
-"Why didn't you say?"
+"Yes," he said.
 
-She thought about it. "I think I assumed you'd already know."
+She hit him with a pillow. He laughed — a real laugh, not the professional one she'd heard for two years — and she thought: I want to hear that every day, which was alarming to realize at eleven-thirty on a Tuesday in Kumasi.
 
-He shook his head slowly. "I want you to tell me. I want to hear you say the things you want. That's — " He stopped. Looked at her. "That's actually what I want most. More than anything on my list."
+She set the thought aside and kissed him, which was easier.
 
-Esi reached across the table and took his hand.
+They had established by now — through the specific education of actually touching each other — that they fit together in a way that felt almost unfair. He had learned quickly where she was sensitive, responding to sound and movement without needing instruction. She had discovered that he liked to go slowly at first, liked the buildup, liked to feel her building before he let either of them move further — the patience of a man who understood that delay is not deprivation.
 
-Five years. The same hands she'd held a thousand times. And somehow, right now, it felt like the first time she was really holding them.
+She pulled him back toward her and he came willingly, his hands moving with a certainty that made her stop thinking entirely. By the time she came she was gripping his shoulders and saying his name in a way that had nothing professional about it.
 
-"Okay," she said. "Then I'll tell you everything."
+"What are you thinking?" he asked, after.
 
-She did.
+"Thursday's meeting," she said honestly.
 
-It took the rest of the evening.`,
+He looked at her for a long moment. Then his expression shifted into the focused attention that had, two hours ago, been very effectively making her forget her own name.
+
+"I'll give you something else to think about," he said.
+
+He did. She forgot Thursday completely.`,
     },
   });
 
   const ep3_3 = await prisma.eroticaEpisode.create({
     data: {
       seriesId: series3.id,
-      title: "Rediscovering",
-      slug: "rediscovering",
+      title: "Back Home",
+      slug: "back-home",
       episodeNum: 3,
-      readTime: 13,
+      readTime: 12,
       isFree: false,
       body: `They started on a Friday night, which felt right — the week done, the weekend open, nowhere to be.
 

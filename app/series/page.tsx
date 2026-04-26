@@ -6,10 +6,10 @@ import Header from '@/components/layout/Header'
 import { BookOpen, Heart } from 'lucide-react'
 
 const GENRE_COLORS: Record<string, string> = {
-  Romance:  '#BF567D',
-  Thriller: '#7C3D52',
-  Fantasy:  '#593C44',
-  Steamy:   '#A0455F',
+  Romance:  '#A66A86',
+  Thriller: '#A8722A',
+  Fantasy:  '#B8822D',
+  Steamy:   '#A66A86',
 }
 
 const COVER_IMAGES: Record<string, string> = {
@@ -44,7 +44,7 @@ export default async function SeriesPage() {
               const likeCount = series._count.likes
               const episodeCount = series._count.episodes
               const coverImg = series.coverImage ?? COVER_IMAGES[series.genre] ?? COVER_IMAGES.Romance
-              const accent = GENRE_COLORS[series.genre] ?? '#BF567D'
+              const accent = GENRE_COLORS[series.genre] ?? '#A66A86'
 
               return (
                 <Link
@@ -90,7 +90,7 @@ export default async function SeriesPage() {
                         <span className="text-[10px] text-gray-600">{episodeCount} ep</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Heart size={11} fill="#BF567D" color="#BF567D" />
+                        <Heart size={11} fill="#A66A86" color="#A66A86" />
                         <span className="text-[10px] text-gray-600">{likeCount}</span>
                       </div>
                     </div>

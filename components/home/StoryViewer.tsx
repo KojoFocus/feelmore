@@ -136,7 +136,7 @@ export default function StoryViewer({ stories, startIndex = 0, onClose }: Props)
 
       {/* ── Top bar: badge + close ── */}
       <div style={{ position: 'absolute', top: 52, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', zIndex: 10 }}>
-        <span style={{ fontSize: 11, fontWeight: 600, color: '#BF567D', backgroundColor: 'rgba(191,86,125,0.2)', padding: '5px 12px', borderRadius: 9999 }}>
+        <span style={{ fontSize: 11, fontWeight: 600, color: '#A66A86', backgroundColor: 'rgba(166,106,134,0.2)', padding: '5px 12px', borderRadius: 9999 }}>
           {label}
         </span>
         <button
@@ -170,7 +170,7 @@ export default function StoryViewer({ stories, startIndex = 0, onClose }: Props)
         </p>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <Heart size={15} fill="#BF567D" color="#BF567D" />
+            <Heart size={15} fill="#A66A86" color="#A66A86" />
             <span style={{ fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.55)' }}>{story._count.likes}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>

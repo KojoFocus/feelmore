@@ -58,7 +58,7 @@ function StoryCircle({
         style={{
           padding: 3,
           borderRadius: 9999,
-          border: `1.5px solid ${active ? '#C9923A' : 'rgba(255,255,255,0.08)'}`,
+          border: `1.5px solid ${active ? '#A66A86' : 'rgba(255,255,255,0.08)'}`,
           backgroundColor: '#100C08',
         }}
       >
@@ -74,13 +74,13 @@ function StoryCircle({
           )}
           {!img && (
             <div className="w-full h-full flex items-center justify-center">
-              <Plus size={22} color="#C9923A" strokeWidth={1.5} />
+              <Plus size={22} color="#A66A86" strokeWidth={1.5} />
             </div>
           )}
           {badge && active && (
             <div
               className="absolute bottom-1 left-1/2 -translate-x-1/2 w-[18px] h-[18px] rounded-full flex items-center justify-center"
-              style={{ backgroundColor: '#C9923A' }}
+              style={{ backgroundColor: '#A66A86' }}
             >
               <span className="text-white" style={{ fontSize: 8 }}>♥</span>
             </div>

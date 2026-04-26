@@ -31,13 +31,13 @@ export default function BottomNav() {
               <Icon
                 size={20}
                 strokeWidth={active ? 0 : 1.5}
-                fill={active ? '#C9923A' : 'none'}
-                color={active ? '#C9923A' : undefined}
+                fill={active ? '#A66A86' : 'none'}
+                color={active ? '#A66A86' : undefined}
                 className={active ? '' : 'text-gray-700'}
               />
               <span
                 className="text-[9px] font-medium tracking-wide"
-                style={{ color: active ? '#C9923A' : '#374151' }}
+                style={{ color: active ? '#A66A86' : '#374151' }}
               >
                 {label}
               </span>

@@ -13,10 +13,10 @@ const COVER_IMAGES: Record<string, string> = {
 }
 
 const GENRE_COLORS: Record<string, string> = {
-  Romance:  '#BF567D',
-  Thriller: '#7C3D52',
-  Fantasy:  '#593C44',
-  Steamy:   '#A0455F',
+  Romance:  '#A66A86',
+  Thriller: '#A8722A',
+  Fantasy:  '#B8822D',
+  Steamy:   '#A66A86',
 }
 
 export default async function SeriesDetailPage({ params }: { params: { slug: string } }) {
@@ -25,7 +25,7 @@ export default async function SeriesDetailPage({ params }: { params: { slug: str
   if (!series) return notFound()
 
   const coverImg = series.coverImage ?? COVER_IMAGES[series.genre] ?? COVER_IMAGES.Romance
-  const accent = GENRE_COLORS[series.genre] ?? '#BF567D'
+  const accent = GENRE_COLORS[series.genre] ?? '#A66A86'
 
   return (
     <div className="pb-28">

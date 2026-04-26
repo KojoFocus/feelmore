@@ -55,7 +55,7 @@ export default async function EpisodePage({
         <div className="flex items-center gap-2 mb-3">
           <span
             className="text-[9px] font-semibold uppercase tracking-widest"
-            style={{ color: 'rgba(191,86,125,0.6)' }}
+            style={{ color: 'rgba(166,106,134,0.6)' }}
           >
             Episode {episode.episodeNum}
           </span>
@@ -107,25 +107,25 @@ export default async function EpisodePage({
           <Link
             href={`/series/${series.slug}/${next.slug}`}
             className="flex-1 flex items-center justify-end gap-2 py-3.5 px-4 rounded-2xl"
-            style={{ backgroundColor: 'rgba(191,86,125,0.08)', border: '1px solid rgba(191,86,125,0.2)' }}
+            style={{ backgroundColor: 'rgba(166,106,134,0.08)', border: '1px solid rgba(166,106,134,0.2)' }}
           >
             <div className="text-right">
-              <p className="text-[9px] uppercase tracking-wide" style={{ color: 'rgba(191,86,125,0.5)' }}>Next</p>
-              <p className="text-[12px] font-semibold truncate max-w-[90px]" style={{ color: '#BF567D' }}>{next.title}</p>
+              <p className="text-[9px] uppercase tracking-wide" style={{ color: 'rgba(166,106,134,0.5)' }}>Next</p>
+              <p className="text-[12px] font-semibold truncate max-w-[90px]" style={{ color: '#A66A86' }}>{next.title}</p>
             </div>
-            <ChevronLeft size={13} color="#BF567D" style={{ transform: 'rotate(180deg)' }} />
+            <ChevronLeft size={13} color="#A66A86" style={{ transform: 'rotate(180deg)' }} />
           </Link>
         ) : (
           <Link
             href={`/series/${series.slug}`}
             className="flex-1 flex items-center justify-end gap-2 py-3.5 px-4 rounded-2xl"
-            style={{ backgroundColor: 'rgba(191,86,125,0.08)', border: '1px solid rgba(191,86,125,0.2)' }}
+            style={{ backgroundColor: 'rgba(166,106,134,0.08)', border: '1px solid rgba(166,106,134,0.2)' }}
           >
             <div className="text-right">
-              <p className="text-[9px] uppercase tracking-wide" style={{ color: 'rgba(191,86,125,0.5)' }}>Back to</p>
-              <p className="text-[12px] font-semibold" style={{ color: '#BF567D' }}>Series</p>
+              <p className="text-[9px] uppercase tracking-wide" style={{ color: 'rgba(166,106,134,0.5)' }}>Back to</p>
+              <p className="text-[12px] font-semibold" style={{ color: '#A66A86' }}>Series</p>
             </div>
-            <BookOpen size={13} color="#BF567D" />
+            <BookOpen size={13} color="#A66A86" />
           </Link>
         )}
       </div>

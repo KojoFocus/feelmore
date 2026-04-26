@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Heart, MessageCircle } from 'lucide-react'
 
 type Story = {
@@ -57,7 +58,7 @@ export default function StoryCard({ story }: { story: Story }) {
         {/* Top: category · time · ··· */}
         <div className="flex items-center justify-between flex-shrink-0 mb-3">
           <div className="flex items-center gap-2">
-            <span style={{ color: '#C9923A', fontSize: 13, fontWeight: 500 }}>{label}</span>
+            <span style={{ color: '#A66A86', fontSize: 13, fontWeight: 500 }}>{label}</span>
             <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12 }}>{timeAgo(story.createdAt)}</span>
           </div>
           <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 18, letterSpacing: 2, lineHeight: 1 }}>···</span>
@@ -82,9 +83,9 @@ export default function StoryCard({ story }: { story: Story }) {
               <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>{story._count.comments}</span>
             </div>
           </div>
-          <button style={{ color: '#C9923A', fontSize: 13, fontWeight: 500 }}>
+          <Link href={`/stories/${story.id}`} style={{ color: '#A66A86', fontSize: 13, fontWeight: 500 }}>
             Read more ›
-          </button>
+          </Link>
         </div>
       </div>
     </div>

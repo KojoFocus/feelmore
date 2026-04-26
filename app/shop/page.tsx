@@ -59,7 +59,7 @@ export default async function ShopPage() {
       <div className="flex gap-2 overflow-x-auto scrollbar-hide px-5 pt-1 pb-5">
         <button
           className="flex-shrink-0 text-[10px] font-semibold text-white px-3.5 py-1.5 rounded-full"
-          style={{ backgroundColor: '#BF567D' }}
+          style={{ backgroundColor: '#A66A86' }}
         >
           All
         </button>
@@ -103,7 +103,7 @@ export default async function ShopPage() {
                 {badge && (
                   <span
                     className="absolute top-3 left-3 text-[8px] font-bold text-white px-2 py-[3px] rounded-full tracking-wider uppercase"
-                    style={{ backgroundColor: '#BF567D' }}
+                    style={{ backgroundColor: '#A66A86' }}
                   >
                     {badge}
                   </span>
@@ -113,14 +113,14 @@ export default async function ShopPage() {
                 <p className="text-[9px] text-gray-700 mb-1 uppercase tracking-wider">{product.category.name}</p>
                 <p className="text-white/85 text-[12px] font-semibold truncate leading-snug">{product.name}</p>
                 {product.tagline && (
-                  <p className="text-[10px] truncate mt-0.5" style={{ color: 'rgba(191,147,143,0.5)' }}>{product.tagline}</p>
+                  <p className="text-[10px] truncate mt-0.5" style={{ color: 'rgba(166,106,134,0.5)' }}>{product.tagline}</p>
                 )}
                 <div className="flex items-center justify-between mt-3">
-                  <span className="text-[12px] font-bold" style={{ color: '#BF567D' }}>
+                  <span className="text-[12px] font-bold" style={{ color: '#A66A86' }}>
                     GHS {price.toLocaleString()}
                   </span>
-                  <span className="rounded-[8px] p-1.5" style={{ backgroundColor: 'rgba(191,86,125,0.12)' }}>
-                    <ShoppingCart size={12} color="#BF567D" />
+                  <span className="rounded-[8px] p-1.5" style={{ backgroundColor: 'rgba(166,106,134,0.12)' }}>
+                    <ShoppingCart size={12} color="#A66A86" />
                   </span>
                 </div>
               </div>
