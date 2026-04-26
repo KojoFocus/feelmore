@@ -108,7 +108,7 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function ProductRow({ products }: { products: Product[] }) {
   return (
-    <section className="flex-shrink-0" style={{ marginTop: 14 }}>
+    <section className="flex-shrink-0" style={{ marginTop: 10 }}>
       <div className="flex items-center justify-between px-5 mb-3">
         <p style={{ color: '#ffffff', fontSize: 15, fontWeight: 600 }}>Explore quietly</p>
         <Link href="/shop" style={{ color: '#C9923A', fontSize: 13, fontWeight: 500 }}>

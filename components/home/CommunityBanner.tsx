@@ -5,7 +5,7 @@ const BG = 'https://images.unsplash.com/photo-1603905491269-7ff6d5d4c6e6?w=600&h
 
 export default function CommunityBanner() {
   return (
-    <section className="flex-shrink-0" style={{ margin: '12px 20px 0' }}>
+    <section className="flex-shrink-0" style={{ margin: '10px 20px 0' }}>
       <div className="relative rounded-2xl overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -16,7 +16,7 @@ export default function CommunityBanner() {
         <div className="relative flex items-center justify-between px-4 py-3.5">
           <div className="flex items-center gap-3">
             <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(201,146,58,0.12)' }}>
-              <Heart size={12} fill="#C9923A" color="#C9923A" />
+              <Heart size={12} strokeWidth={1.5} color="#C9923A" />
             </div>
             <div>
               <p className="text-white/75 font-medium leading-tight" style={{ fontSize: 12 }}>You&apos;re not alone.</p>

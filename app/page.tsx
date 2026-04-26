@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header'
 import StoriesRow from '@/components/home/StoriesRow'
 import StoryCard from '@/components/home/StoryCard'
 import ProductRow from '@/components/home/ProductRow'
+import CommunityBanner from '@/components/home/CommunityBanner'
 
 export default async function Home() {
   let stories: Awaited<ReturnType<typeof fetchStories>> = []
@@ -37,7 +38,7 @@ export default async function Home() {
       <StoriesRow stories={serializedStories} />
 
       {/* Story card grows to fill remaining space */}
-      <div style={{ flex: 1, minHeight: 0, padding: '10px 20px 0' }}>
+      <div style={{ flex: 1, minHeight: 0, padding: '8px 16px 0' }}>
         {featuredStory
           ? <StoryCard story={featuredStory} />
           : <div style={{ height: '100%', borderRadius: 18, backgroundColor: '#0E0B08' }} />
@@ -57,6 +58,7 @@ export default async function Home() {
           images: p.images,
         }))}
       />
+      <CommunityBanner />
     </div>
   )
 }
