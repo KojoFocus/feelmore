@@ -740,8 +740,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.REAL_TALK,
-      title: "Thursday night alone",
-      body: "I came so hard my thighs were still shaking ten minutes later. That was my first time with the Luna Mini — lights off, sheets gripped, hips lifting completely off the mattress on their own. I had barely turned it past the first setting. I lay there in the dark afterward thinking: I have been starving myself for years and I didn't even know it.",
+      title: "I finally understood",
+      body: "I pressed the Luna Mini against my clit and my whole body clenched immediately. I turned it up. My back arched off the bed, legs spread, hips grinding against it because I couldn't stop myself. I came in under four minutes — soaking wet, thighs shaking, gasping into the pillow. I had been having sex for years and nothing had ever made me come like that. I lay there wet and breathless thinking: this is what I've been missing.",
       isPublic: true,
     },
   });
@@ -750,8 +750,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.WOMEN_SAY,
-      title: "His mouth first",
-      body: "His mouth was between my thighs before I'd finished undressing. He licked slowly, then harder when my fingers pushed into his hair — then two fingers inside me, curling upward, and I came against his face saying his name like I had no other words. He reached for the Silk Glide afterward and kissed up my stomach and we were nowhere near finished. That night lasted until the city outside went quiet.",
+      title: "His tongue didn't stop",
+      body: "He spread my legs and went down on me like he had nowhere else to be. Licking me slow and deep, sucking on my clit until I was dripping and pulling his hair. He pushed two fingers inside and fucked me with them while his tongue worked me and I came so hard I squirted on his face. He didn't stop. He kept licking until I came a second time screaming into the sheets. Then he reached for the Silk Glide. We were not done.",
       isPublic: true,
     },
   });
@@ -760,8 +760,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.FOR_COUPLES,
-      title: "The remote was his",
-      body: "He slipped the Double Trouble in and kept the remote. Every time I got close he turned it down and watched my face fall apart. Three times. He put me back together and took me apart again and when he finally let me finish I grabbed his shoulders so hard I left marks. He held me through all of it without letting go once. That night cracked something open between us that has never closed.",
+      title: "He controlled everything",
+      body: "He put the Double Trouble inside me, slid into me from behind, and held the remote. Every time I was about to come he turned it down and kept fucking me slowly, watching me lose my mind. By the third time I was soaking the sheets, begging him out loud — actually begging. When he finally turned it to max and fucked me hard we both came at the same time and I couldn't walk straight for an hour.",
       isPublic: true,
     },
   });
@@ -770,8 +770,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.TIPS,
-      title: "Warm it first — trust me",
-      body: "Rub Ignite warming lube between your palms for thirty seconds before you touch anything. By the time your hands move the heat is already spreading and your body opens completely differently. Every nerve is awake. Whatever comes next — fingers, mouth, toy — lands at twice the intensity. I learned this by accident. Now I will never skip it again.",
+      title: "Warm lube before everything",
+      body: "Pour Ignite warming lube into both palms, rub them together until it heats up, then touch yourself or your partner. The warmth opens everything — your pussy gets wetter instantly, every nerve doubles in sensitivity. When my partner used it on me before going down, I came in two minutes flat. It turns foreplay into something completely different. Non-negotiable now.",
       isPublic: true,
     },
   });
@@ -780,8 +780,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.REAL_TALK,
-      title: "She rode me slow",
-      body: "She straddled me and guided me inside her one inch at a time, watching my face. Then her lips were at my ear and she told me exactly what she wanted. I gave it to her. She rode me until her nails were in my back and her thighs were shaking and she came with her forehead pressed against mine, eyes open, looking straight at me. I have thought about that look every single day since.",
+      title: "She rode me until I broke",
+      body: "She climbed on top, grabbed my cock, and pushed herself down on it slowly. Started riding — grinding her hips, bouncing on me, taking every inch. She reached back and held my thighs for leverage and fucked me until I was gripping the sheets. When she came she dug her nails into my chest and clenched around me so tight I came immediately after, deep inside her. We lay there leaking and wrecked and she looked at me and smiled.",
       isPublic: true,
     },
   });
@@ -790,8 +790,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.REAL_TALK,
-      title: "He watched and didn't move",
-      body: "I used the Luna Mini on myself while he sat in the chair fully dressed and watched. I came twice while he stayed completely still — only his jaw moved, tight and controlled. When I finally said his name he crossed the room in two steps and kissed me like he'd been holding it the entire time. We didn't sleep until morning. Being watched like that was the best foreplay I have ever had.",
+      title: "He watched me the whole time",
+      body: "I told him to sit in the chair and not touch me. I lay on the bed, spread my legs, and used the Luna Mini on my clit while he watched. I was so wet from being watched that it only took minutes. I came with my hips in the air, moaning, soaking the sheets — eyes on him the whole time. When I finished I said his name once. He crossed the room, flipped me over, and fucked me from behind without a word.",
       isPublic: true,
     },
   });
@@ -800,8 +800,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.WOMEN_SAY,
-      title: "I took her apart slowly",
-      body: "My mouth was on her before she'd finished pulling me close. I worked down slowly, hands on her thighs keeping them open, and when my tongue found what it was looking for she gripped the headboard and said stop and don't stop in the same breath. I used the Silk Glide next, fingers deep, until she came in a way that sounded like relief. She pulled me up and kissed me hard and didn't let go for a long time.",
+      title: "I ate her out for an hour",
+      body: "I pulled her underwear off and buried my face between her thighs. Licked her pussy slow, learned every part of her — what made her gasp, what made her grab my head. I fingered her while I sucked her clit and she came on my face talking in a language I had never heard her use before. Then I used the Silk Glide on my fingers and took her apart a second time while she begged me not to stop.",
       isPublic: true,
     },
   });
@@ -810,8 +810,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.WOMEN_SAY,
-      title: "On the kitchen counter",
-      body: "He lifted me onto the counter mid-kiss and stepped between my knees and was inside me before either of us decided to do it. No bedroom, no plan — just his mouth on my collarbone and my legs locked around him and the sound of the city outside while I let myself be completely loud. We stood in the kitchen afterward not speaking, just catching breath, and then he kissed me again and we went to the bedroom to do it properly.",
+      title: "Against the wall, no warning",
+      body: "He pinned me against the kitchen wall, pulled my underwear to the side, and slid two fingers inside me. I was already wet. He fingered me until I was dripping down my thighs, then bent me forward and fucked me standing right there — deep, slow strokes that made me claw the wall. I came first. He followed thirty seconds later holding my hips so tight I had bruises for three days. I did not mind at all.",
       isPublic: true,
     },
   });
@@ -820,8 +820,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.FOR_COUPLES,
-      title: "The Vibe Ring hit us both",
-      body: "She put the Vibe Ring on me herself, slow and deliberate. Then she climbed on and sank down and when the vibration hit us both at once her mouth opened and she made a sound I had never heard before. We found the angle where it buzzed against her perfectly and I watched her lose control completely while I held on as long as I could. She came first, loudly. I followed immediately. We lay completely wrecked for half an hour.",
+      title: "The ring changed everything",
+      body: "I put the Vibe Ring on him and rode him. The moment I sank down and the vibration hit my clit I gasped and couldn't stop moving. I fucked him hard, chasing that feeling — grinding down, taking all of him while it buzzed against me. He watched my face the whole time. I came so intensely I bit his shoulder. He came thirty seconds later groaning my name. We looked at each other and immediately ordered a second one.",
       isPublic: true,
     },
   });
@@ -830,8 +830,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.FOR_COUPLES,
-      title: "I made him beg",
-      body: "I used the Ignite lube on him with both hands — long, slow strokes, adjusting every time his breathing changed. He grabbed my wrist twice. Both times I moved it away. When I finally took him in my mouth he said my name in a voice I had never heard before. Afterward he pulled me close and said: where did you learn that? I told him: feelmore. He ordered two more products before we fell asleep.",
+      title: "I made him lose control",
+      body: "I warmed the Ignite lube and stroked him slow — both hands, long pulls, watching his face. Every time he got close I slowed down. He grabbed my wrist. I moved it away. When I finally took him in my mouth and sucked him properly he made a sound I had never heard before and came immediately. He pulled me up, kissed me deeply, and went down on me for forty-five minutes straight. Revenge. Beautiful revenge.",
       isPublic: true,
     },
   });
@@ -840,8 +840,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.TIPS,
-      title: "Always lube. Every time.",
-      body: "Silk Glide changes everything — I don't care how ready you think you are. Every movement lands deeper, softer, more. Your partner feels different. You feel different. The first time I used it properly I actually gasped at the difference. I use it every single time now. My body has not been the same since and neither has anyone I've been in bed with.",
+      title: "Lube before everything",
+      body: "Use Silk Glide before your partner enters you. A little on him, a little on yourself. The difference is immediate — deeper, smoother, and every thrust feels amplified. I used to skip it. Now I refuse to have sex without it. My partner says it changed how I feel around him. I say it changed how everything feels for me. Both true. Use the lube. Always.",
       isPublic: true,
     },
   });
@@ -850,8 +850,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.TIPS,
-      title: "G-Spot Pro: hold still",
-      body: "Curve it toward your belly button, mode 3, and hold completely still. That's it. Your body starts responding in under two minutes if you stop chasing and just breathe. When your hips begin moving on their own, go to mode 5. Then hold on. Nothing I have used finds that spot with this precision. The first time it hit right I had to cover my own mouth.",
+      title: "G-Spot Pro: don't move it",
+      body: "Insert the G-Spot Pro, curve it upward, set it to mode 3, and hold it completely still. Breathe. In 90 seconds your hips will start moving on their own — let them. When the pressure builds and your legs start shaking, go to mode 5. I have made myself squirt three times in one session with this exact method. Do not chase it. Let it find you.",
       isPublic: true,
     },
   });
@@ -860,8 +860,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.TIPS,
-      title: "Start low, go slow",
-      body: "Stay on setting 1 for the first ten minutes — I know it feels like nothing, stay there. Your body is waking up, every nerve calibrating. By the time you move to setting 3 you will understand why people say this changes them. The Luna Mini on a slow build makes your back arch in a way that feels almost too much. The tension is the whole point. The release is worth every second of the wait.",
+      title: "Low setting. Ten minutes. Trust.",
+      body: "Luna Mini on setting 1. Press it directly on your clit and leave it there for ten full minutes without moving it or turning it up. Your whole vulva wakes up, every nerve on edge, throbbing and soaking wet. Then go to setting 3. You will come within sixty seconds and it will be the most intense orgasm of your week. The build is everything. Rushing it robs you of half the sensation.",
       isPublic: true,
     },
   });
