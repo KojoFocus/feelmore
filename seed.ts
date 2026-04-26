@@ -740,7 +740,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.REAL_TALK,
-      body: "I was nervous buying my first toy... didn't even know what I was doing tbh. Wish someone had told me these things.",
+      title: "Thursday night alone",
+      body: "I was in bed, lights off, when I finally opened the Luna Mini box. I slid it under the sheets and pressed it between my thighs. The first setting made me gasp. I turned it up. My hips lifted off the mattress on their own — my body took over completely. I came so hard my thighs were still shaking ten minutes later. I lay there in the dark and thought: I have been starving myself for years.",
       isPublic: true,
     },
   });
@@ -749,8 +750,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.WOMEN_SAY,
-      title: "It's not about the size",
-      body: "Honestly the Luna Mini changed my perspective entirely. Sometimes smaller is better and I'm not ashamed to say it.",
+      title: "His mouth first",
+      body: "He kissed down my stomach slowly, parting my thighs with both hands. When his mouth found me I stopped breathing. He took his time — licking softly at first, then harder when my fingers gripped his hair. He slid two fingers inside me and curled them upward and I came against his face saying his name like a prayer. Then he reached for the Silk Glide and we were nowhere near done.",
       isPublic: true,
     },
   });
@@ -759,8 +760,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.FOR_COUPLES,
-      title: "Date night upgrade",
-      body: "We were in a rut and a friend recommended we try something new. Best decision we made as a couple this year.",
+      title: "The remote was his",
+      body: "He slipped the Double Trouble inside me, fit the ring on himself, and handed me nothing — the remote stayed in his hand all night. Every time I got close he turned it down. He watched my face fall apart and put it back together three times before he finally let me finish. When it hit I grabbed his shoulders and couldn't let go. He held me through all of it. That night broke something open between us that has never closed.",
       isPublic: true,
     },
   });
@@ -769,18 +770,18 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.TIPS,
-      title: "Always clean your toys",
-      body: "Use the Pure Clean spray before AND after every use. It's the hygiene step nobody talks about but everyone should know.",
+      title: "Warm it in your hands",
+      body: "Pour the Ignite warming lube into your palm and rub your hands together for thirty seconds before you touch anything. The heat builds in your palms first — then the moment you use it, the warmth spreads and opens everything up. Your sensitivity triples. Whatever you do next lands completely differently. Do not skip this. It is the difference between good and unforgettable.",
       isPublic: true,
     },
   });
 
-  // ── Extra stories per category ────────────────────────────────────────────
   const story5 = await prisma.story.create({
     data: {
       userId: user2.id,
       category: StoryCategory.REAL_TALK,
-      body: "Nobody tells you that it's completely okay to explore on your own. I wish someone had normalised this for me sooner.",
+      title: "I wasn't ready for it",
+      body: "She straddled me and reached between us to guide me inside her. Slow. Inch by inch, watching my face the whole time. Then she leaned forward, lips at my ear, and whispered exactly what she wanted. I gripped her hips and gave it to her. She rode me until her thighs were shaking and her nails were in my back and she came with her forehead pressed against mine, eyes open, looking straight at me. I have thought about that moment every single day since.",
       isPublic: true,
     },
   });
@@ -789,7 +790,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.REAL_TALK,
-      body: "I grew up thinking pleasure was something to be embarrassed about. Discovering feelmore changed that for me entirely.",
+      title: "He watched and didn't move",
+      body: "I told him to sit in the chair and not touch me. He did. I used the Luna Mini on myself while he watched from across the room, fully dressed, completely still. The only thing that moved was his jaw — tight, controlled. I came twice. Hard. When I finally said his name he crossed the room in two steps and we didn't sleep until morning. The watching was the best foreplay of my life.",
       isPublic: true,
     },
   });
@@ -798,8 +800,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.WOMEN_SAY,
-      title: "Know your body",
-      body: "We spend so much time taking care of everyone else. This is the one thing I do purely for myself and I have zero regrets.",
+      title: "I took her apart slowly",
+      body: "I warmed the Silk Glide between my palms, kissed her neck, and worked my way down until she was gripping the headboard with both hands. I used my fingers first — slow, deep, watching every breath. Then my mouth. She said stop. She said don't stop. She said my name in a voice I had never heard before. When she finally came it was long and full and she pulled me up immediately and kissed me so hard I tasted her lipstick for an hour.",
       isPublic: true,
     },
   });
@@ -808,8 +810,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.WOMEN_SAY,
-      title: "Discreet & fast",
-      body: "The packaging was so discreet I almost missed it at the door. Delivery was faster than I expected. 10/10 experience.",
+      title: "On the kitchen counter",
+      body: "It started with a kiss that wasn't supposed to go anywhere. He lifted me onto the kitchen counter and stood between my knees and the kissing turned into hands and the hands turned into him sliding into me right there — no bedroom, no planning, no buildup. Just the two of us and the sound of the city outside and his mouth on my collarbone while I held the back of his neck and let myself be completely loud about it.",
       isPublic: true,
     },
   });
@@ -818,8 +820,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.FOR_COUPLES,
-      title: "Try something new",
-      body: "The Double Trouble literally brought us closer. It felt like discovering each other all over again. Highly recommend.",
+      title: "We used it together",
+      body: "She put the Vibe Ring on me herself — took her time doing it, eyes on mine. Then she climbed on top and when she sank down and the vibration hit us both simultaneously, her mouth fell open. We moved together finding the angle where it buzzed against her perfectly and her hands braced on my chest and she came before I did, loudly, and the feeling of her around me when she did meant I wasn't far behind. We lay there completely wrecked afterward. It was glorious.",
       isPublic: true,
     },
   });
@@ -828,7 +830,8 @@ async function main() {
     data: {
       userId: user1.id,
       category: StoryCategory.FOR_COUPLES,
-      body: "We made it a monthly ritual — trying something new together. It keeps things exciting and we always have something to talk about.",
+      title: "I made him beg",
+      body: "I warmed the Ignite lube and used it on him with both hands — long, slow, deliberate. Every time his breathing changed I slowed down. He grabbed my wrist twice. Both times I moved it gently away. When I finally let him come it was with my mouth and he said my name in a voice that didn't sound like him at all. Afterward he pulled me close and said, 'where did you learn that?' I told him: feelmore. He ordered two more products that same night.",
       isPublic: true,
     },
   });
@@ -837,8 +840,8 @@ async function main() {
     data: {
       userId: user2.id,
       category: StoryCategory.TIPS,
-      title: "Water-based is best",
-      body: "Always use water-based lube with silicone toys — it preserves the material and keeps things safe. Silk Glide is my go-to.",
+      title: "Always lube. Always.",
+      body: "I don't care how ready you think you are — Silk Glide changes the entire experience. Everything is smoother, deeper, more sensitive. Your partner feels different. You feel different. It removes friction and replaces it with something that makes every movement land twice as hard. I use it every single time now. My body has never been happier and neither has anyone I've been in bed with.",
       isPublic: true,
     },
   });
@@ -847,8 +850,8 @@ async function main() {
     data: {
       userId: user3.id,
       category: StoryCategory.TIPS,
-      title: "Storage matters",
-      body: "Get the velvet storage pouch. Keeping your toys clean and stored properly makes them last way longer. Don't skip this.",
+      title: "The G-Spot Pro: a guide",
+      body: "Curve it toward your belly button. Mode 3. Do not move it — just hold it there and breathe. Your body will start responding within ninety seconds if you stay still and let it. When your hips start moving on their own, switch to mode 5. Then hold on. I have used a lot of toys. Nothing finds that spot with this accuracy. It is almost unreasonably good.",
       isPublic: true,
     },
   });
@@ -858,7 +861,7 @@ async function main() {
       userId: user1.id,
       category: StoryCategory.TIPS,
       title: "Start low, go slow",
-      body: "New to vibrators? Always start at the lowest setting and work up gradually. Your body will thank you for the patience.",
+      body: "New to vibrators? Stay on setting 1 for the first ten minutes. Your body needs to calibrate — to learn to receive before it knows how to chase. By the time you move up a level, every nerve ending is awake and begging. The Luna Mini on setting 3 after a slow build will make your toes curl and your back arch in a way that feels almost too good to be real. Build the tension. The release is worth it.",
       isPublic: true,
     },
   });
