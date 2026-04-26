@@ -19,10 +19,10 @@ const categoryLabels: Record<string, string> = {
 }
 
 const categoryBg: Record<string, string> = {
-  REAL_TALK:   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop&q=80',
-  WOMEN_SAY:   'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&h=500&fit=crop&q=80',
-  FOR_COUPLES: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=500&fit=crop&q=80',
-  TIPS:        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=500&fit=crop&q=80',
+  REAL_TALK:   'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=500&fit=crop&q=80',
+  WOMEN_SAY:   'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&h=500&fit=crop&q=80',
+  FOR_COUPLES: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=600&h=500&fit=crop&q=80',
+  TIPS:        'https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&h=500&fit=crop&q=80',
 }
 
 function timeAgo(date: Date | string): string {
