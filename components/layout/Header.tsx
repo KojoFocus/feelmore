@@ -6,7 +6,7 @@ export default function Header() {
       className="flex items-center justify-between px-5 flex-shrink-0"
       style={{ paddingTop: 'max(44px, env(safe-area-inset-top, 44px))', paddingBottom: 12 }}
     >
-      <span className="text-[21px] font-bold tracking-tight" style={{ color: '#BF567D' }}>
+      <span className="text-[21px] font-bold tracking-tight" style={{ color: '#C9923A' }}>
         feelmore.
       </span>
       <button

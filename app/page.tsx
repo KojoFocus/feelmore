@@ -40,7 +40,7 @@ export default async function Home() {
       <div style={{ flex: 1, minHeight: 0, padding: '10px 20px 0' }}>
         {featuredStory
           ? <StoryCard story={featuredStory} />
-          : <div style={{ height: '100%', borderRadius: 18, backgroundColor: '#0e0810' }} />
+          : <div style={{ height: '100%', borderRadius: 18, backgroundColor: '#0E0B08' }} />
         }
       </div>
 

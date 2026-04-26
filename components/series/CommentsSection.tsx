@@ -86,7 +86,7 @@ export default function CommentsSection({ episodeId, initial }: Props) {
           disabled={!text.trim() || sending}
           style={{ opacity: text.trim() ? 1 : 0.3, transition: 'opacity 0.15s' }}
         >
-          <Send size={14} color="#BF567D" />
+          <Send size={14} color="#C9923A" />
         </button>
       </div>
 
@@ -96,7 +96,7 @@ export default function CommentsSection({ episodeId, initial }: Props) {
           <div key={c.id} className="flex gap-3">
             <div
               className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-[11px] font-semibold"
-              style={{ backgroundColor: 'rgba(191,86,125,0.15)', color: '#BF567D' }}
+              style={{ backgroundColor: 'rgba(201,146,58,0.15)', color: '#C9923A' }}
             >
               {(c.user.name ?? 'A')[0].toUpperCase()}
             </div>

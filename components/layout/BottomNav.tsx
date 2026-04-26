@@ -18,7 +18,7 @@ export default function BottomNav() {
     <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-50">
       <nav
         className="flex border-t border-white/[0.05]"
-        style={{ backgroundColor: '#0a0b0f' }}
+        style={{ backgroundColor: '#0F0C09' }}
       >
         {navItems.map(({ href, icon: Icon, label }) => {
           const active = href === '/' ? pathname === '/' : pathname.startsWith(href)
@@ -31,13 +31,13 @@ export default function BottomNav() {
               <Icon
                 size={20}
                 strokeWidth={active ? 0 : 1.5}
-                fill={active ? '#BF567D' : 'none'}
-                color={active ? '#BF567D' : undefined}
+                fill={active ? '#C9923A' : 'none'}
+                color={active ? '#C9923A' : undefined}
                 className={active ? '' : 'text-gray-700'}
               />
               <span
                 className="text-[9px] font-medium tracking-wide"
-                style={{ color: active ? '#BF567D' : '#374151' }}
+                style={{ color: active ? '#C9923A' : '#374151' }}
               >
                 {label}
               </span>
@@ -45,7 +45,7 @@ export default function BottomNav() {
           )
         })}
       </nav>
-      <div className="flex justify-center pb-1.5 pt-0.5" style={{ backgroundColor: '#0a0b0f' }}>
+      <div className="flex justify-center pb-1.5 pt-0.5" style={{ backgroundColor: '#0F0C09' }}>
         <div className="w-20 h-[2.5px] rounded-full bg-white/10" />
       </div>
     </div>

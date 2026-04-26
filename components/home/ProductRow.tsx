@@ -16,21 +16,21 @@ type Product = {
 }
 
 const slugBg: Record<string, string> = {
-  'luna-mini':                   '#3d2030',
-  'vibe-ring':                   '#0d0c10',
-  'rose-bullet':                 '#4a2828',
-  'g-spot-pro':                  '#2a2a1e',
-  'sienna-torso-doll':           '#1e1510',
-  'noa-full-figure-doll':        '#140e0c',
-  'silk-glide-water-based':      '#101828',
-  'velvet-silicone-lube':        '#140f1e',
-  'ignite-warming-lube':         '#1e1208',
-  'double-trouble-couples-vibe': '#160a20',
-  'magic-wand-massager':         '#08161e',
-  'naughty-dice':                '#16110a',
-  'cheeky-card-game':            '#14140c',
-  'pure-clean-toy-spray':        '#0a1018',
-  'velvet-storage-pouch':        '#120e10',
+  'luna-mini':                   '#251608',
+  'vibe-ring':                   '#0E0C09',
+  'rose-bullet':                 '#221408',
+  'g-spot-pro':                  '#1A1A0E',
+  'sienna-torso-doll':           '#1E1510',
+  'noa-full-figure-doll':        '#160E0A',
+  'silk-glide-water-based':      '#0E1620',
+  'velvet-silicone-lube':        '#14100A',
+  'ignite-warming-lube':         '#1E1208',
+  'double-trouble-couples-vibe': '#1A1008',
+  'magic-wand-massager':         '#0A1418',
+  'naughty-dice':                '#16110A',
+  'cheeky-card-game':            '#14120A',
+  'pure-clean-toy-spray':        '#0A1018',
+  'velvet-storage-pouch':        '#120E0A',
 }
 
 const slugImg: Record<string, string> = {
@@ -53,7 +53,7 @@ const slugImg: Record<string, string> = {
 
 function ProductCard({ product }: { product: Product }) {
   const badge = product.badge ?? (product.isBestseller ? 'Bestseller' : null)
-  const bgColor = slugBg[product.slug] ?? '#1a0f14'
+  const bgColor = slugBg[product.slug] ?? '#1a1208'
   const imgUrl = slugImg[product.slug] ?? product.images[0]?.url
 
   return (
@@ -75,7 +75,7 @@ function ProductCard({ product }: { product: Product }) {
         {badge && (
           <span
             className="absolute top-2 left-2 text-[7px] font-bold text-white px-1.5 py-[2px] rounded-full tracking-wider uppercase"
-            style={{ backgroundColor: '#BF567D' }}
+            style={{ backgroundColor: '#C9923A' }}
           >
             {badge}
           </span>
@@ -88,15 +88,15 @@ function ProductCard({ product }: { product: Product }) {
           {product.name}
         </p>
         <div className="flex items-center justify-between mt-2">
-          <span className="font-bold" style={{ fontSize: 11, color: '#BF567D' }}>
+          <span className="font-bold" style={{ fontSize: 11, color: '#C9923A' }}>
             {product.currency} {Number(product.price).toLocaleString()}
           </span>
           <button
             onClick={(e) => e.preventDefault()}
             className="rounded-[6px]"
-            style={{ padding: 5, backgroundColor: 'rgba(191,86,125,0.12)' }}
+            style={{ padding: 5, backgroundColor: 'rgba(201,146,58,0.12)' }}
           >
-            <ShoppingCart size={10} color="#BF567D" />
+            <ShoppingCart size={10} color="#C9923A" />
           </button>
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function ProductRow({ products }: { products: Product[] }) {
     <section className="flex-shrink-0" style={{ marginTop: 14 }}>
       <div className="flex items-center justify-between px-5 mb-3">
         <p className="text-[10px] font-semibold text-gray-700 uppercase tracking-[0.12em]">Explore quietly</p>
-        <Link href="/shop" className="text-[11px] font-medium" style={{ color: '#BF567D' }}>
+        <Link href="/shop" className="text-[11px] font-medium" style={{ color: '#C9923A' }}>
           See all ›
         </Link>
       </div>

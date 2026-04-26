@@ -56,15 +56,15 @@ export default function ReactionBar({ episodeId, counts, userReactions = [] }: P
             onClick={() => toggle(type)}
             className="flex items-center gap-1.5 px-3 py-2 rounded-full transition-all"
             style={{
-              backgroundColor: isActive ? 'rgba(191,86,125,0.15)' : 'rgba(255,255,255,0.04)',
-              border: `1px solid ${isActive ? 'rgba(191,86,125,0.4)' : 'rgba(255,255,255,0.06)'}`,
+              backgroundColor: isActive ? 'rgba(201,146,58,0.15)' : 'rgba(255,255,255,0.04)',
+              border: `1px solid ${isActive ? 'rgba(201,146,58,0.4)' : 'rgba(255,255,255,0.06)'}`,
             }}
           >
             <span className="text-[15px] leading-none">{emoji}</span>
             {count > 0 && (
               <span
                 className="text-[11px] font-medium"
-                style={{ color: isActive ? '#BF567D' : 'rgba(255,255,255,0.3)' }}
+                style={{ color: isActive ? '#C9923A' : 'rgba(255,255,255,0.3)' }}
               >
                 {count}
               </span>

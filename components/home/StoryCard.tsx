@@ -49,7 +49,7 @@ export default function StoryCard({ story }: { story: Story }) {
       {/* Gradient */}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(150deg, rgba(22,8,14,0.97) 0%, rgba(10,6,12,0.9) 100%)' }} />
       {/* Left accent */}
-      <div className="absolute left-0 top-4 bottom-4 w-[2px] rounded-full" style={{ backgroundColor: 'rgba(191,86,125,0.35)' }} />
+      <div className="absolute left-0 top-4 bottom-4 w-[2px] rounded-full" style={{ backgroundColor: 'rgba(201,146,58,0.35)' }} />
 
       <div className="relative h-full flex flex-col px-5 py-4">
 
@@ -57,13 +57,13 @@ export default function StoryCard({ story }: { story: Story }) {
         <div className="flex items-center gap-2.5 mb-3 flex-shrink-0">
           <div
             className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0"
-            style={{ backgroundColor: 'rgba(191,86,125,0.2)', color: '#BF567D' }}
+            style={{ backgroundColor: 'rgba(201,146,58,0.2)', color: '#C9923A' }}
           >
             {initial}
           </div>
           <span
             className="text-[10px] font-semibold px-2 py-[3px] rounded-full"
-            style={{ color: '#BF567D', backgroundColor: 'rgba(191,86,125,0.1)' }}
+            style={{ color: '#C9923A', backgroundColor: 'rgba(201,146,58,0.1)' }}
           >
             {label}
           </span>
@@ -72,7 +72,7 @@ export default function StoryCard({ story }: { story: Story }) {
 
         {/* Title if present */}
         {story.title && (
-          <p className="text-[10px] font-semibold uppercase tracking-widest mb-2 flex-shrink-0" style={{ color: 'rgba(191,86,125,0.65)' }}>
+          <p className="text-[10px] font-semibold uppercase tracking-widest mb-2 flex-shrink-0" style={{ color: 'rgba(201,146,58,0.65)' }}>
             {story.title}
           </p>
         )}
@@ -87,7 +87,7 @@ export default function StoryCard({ story }: { story: Story }) {
         <div className="flex items-center justify-between flex-shrink-0 pt-3">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
-              <Heart size={12} fill="#BF567D" color="#BF567D" />
+              <Heart size={12} fill="#C9923A" color="#C9923A" />
               <span className="text-[11px] text-gray-600">{story._count.likes}</span>
             </div>
             <div className="flex items-center gap-1.5">
@@ -96,7 +96,7 @@ export default function StoryCard({ story }: { story: Story }) {
             </div>
           </div>
           <button className="text-[11px] text-gray-500 font-medium">
-            Read more <span style={{ color: '#BF567D' }}>›</span>
+            Read more <span style={{ color: '#C9923A' }}>›</span>
           </button>
         </div>
       </div>

@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 html {
-  background-color: #08090D;
+  background-color: #0D0A08;
 }
 
 body {
-  background-color: #08090D;
+  background-color: #0D0A08;
   color: #ffffff;
   max-width: 430px;
   margin: 0 auto;
