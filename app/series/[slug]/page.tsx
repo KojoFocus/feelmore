@@ -14,8 +14,8 @@ const COVER_IMAGES: Record<string, string> = {
 
 const GENRE_COLORS: Record<string, string> = {
   Romance:  '#A66A86',
-  Thriller: '#A8722A',
-  Fantasy:  '#B8822D',
+  Thriller: '#A66A86',
+  Fantasy:  '#A66A86',
   Steamy:   '#A66A86',
 }
 
