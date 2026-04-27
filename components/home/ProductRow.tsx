@@ -60,7 +60,7 @@ function ProductCard({ product }: { product: Product }) {
     <Link
       href={`/shop/${product.slug}`}
       className="flex-shrink-0 rounded-[14px] overflow-hidden block"
-      style={{ backgroundColor: '#F5F2EE', width: 88 }}
+      style={{ backgroundColor: '#F5F2EE', width: 79 }}
     >
       <div className="relative w-full overflow-hidden" style={{ height: 80, backgroundColor: '#F5F2EE' }}>
         {imgUrl && (

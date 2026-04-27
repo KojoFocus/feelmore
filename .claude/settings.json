@@ -3,6 +3,13 @@
     "allow": [
       "PowerShell(Stop-Process -Force)",
       "Bash(node -e \"console.log\\(require\\('./node_modules/@prisma/adapter-neon/package.json'\\).version, require\\('./node_modules/@prisma/client/package.json'\\).version, require\\('./node_modules/@neondatabase/serverless/package.json'\\).version\\)\")"
+    ],
+    "additionalDirectories": [
+      "F:\\feelmore\\app\\series\\[slug]",
+      "f:\\feelmore\\app\\messages",
+      "f:\\feelmore\\app\\admin\\products",
+      "f:\\feelmore\\app\\api\\admin\\products",
+      "f:\\feelmore\\app\\api\\admin\\messages"
     ]
   }
 }

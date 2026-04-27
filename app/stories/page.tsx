@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic'
 
 import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
-import { Heart, BookOpen, ChevronRight } from 'lucide-react'
+import { Heart, ChevronRight } from 'lucide-react'
 
 const categoryLabels: Record<string, string> = {
   REAL_TALK:   'Real Talk',
@@ -11,11 +11,11 @@ const categoryLabels: Record<string, string> = {
   TIPS:        'Tips',
 }
 
-const categoryTint: Record<string, string> = {
-  REAL_TALK:   'rgba(90,20,40,0.55)',
-  WOMEN_SAY:   'rgba(60,10,60,0.55)',
-  FOR_COUPLES: 'rgba(40,10,50,0.5)',
-  TIPS:        'rgba(20,20,60,0.5)',
+const categoryAccent: Record<string, string> = {
+  REAL_TALK:   '#C2697A',
+  WOMEN_SAY:   '#A66A86',
+  FOR_COUPLES: '#9B72A8',
+  TIPS:        '#7A8AB3',
 }
 
 const coverPool: Record<string, string[]> = {
@@ -69,85 +69,81 @@ export default async function StoriesPage() {
   const byCategory = Object.fromEntries(
     categories.map(cat => [cat, stories.filter(s => s.category === cat)])
   )
+  const featuredAccent = categoryAccent[featured?.category ?? 'REAL_TALK']
 
   return (
-    <div style={{ backgroundColor: '#080608', minHeight: '100dvh', paddingBottom: 110 }}>
+    <div style={{ backgroundColor: '#07050A', minHeight: '100dvh', paddingBottom: 110 }}>
 
-      {/* Header — just the logo, no subtitle clutter */}
-      <div className="px-5 pt-6 pb-5">
-        <h1 style={{ color: '#ffffff', fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>
-          feel<span style={{ color: '#A66A86' }}>more.</span>
+      {/* ── Header ─────────────────────────────────────── */}
+      <div className="px-5 pt-8 pb-6">
+        <p style={{ color: 'rgba(255,255,255,0.2)', fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 6 }}>
+          feelmore.
+        </p>
+        <h1 style={{ color: '#ffffff', fontSize: 32, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1 }}>
+          Stories
         </h1>
       </div>
 
-      {/* Series banner */}
-      <Link href="/series" className="block mx-5 mb-6">
-        <div className="relative overflow-hidden rounded-[20px]" style={{ height: 120 }}>
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=600&h=300&fit=crop&q=80)`,
-              filter: 'brightness(0.18) saturate(0.3)',
-            }}
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(120deg, rgba(166,106,134,0.12) 0%, rgba(8,6,8,0.7) 100%)' }} />
-          <div className="absolute inset-0 flex items-center justify-between px-5">
-            <div>
-              <p style={{ color: '#A66A86', fontSize: 9, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 8 }}>
-                ✦ Erotica Series
-              </p>
-              <p style={{ color: '#ffffff', fontSize: 17, fontWeight: 700, lineHeight: 1.25, letterSpacing: '-0.01em' }}>
-                Longer stories.{'\n'}Deeper worlds.
-              </p>
-            </div>
-            <div className="flex items-center gap-1.5 px-4 py-2 rounded-full flex-shrink-0" style={{ backgroundColor: '#A66A86' }}>
-              <span style={{ color: '#080608', fontSize: 11, fontWeight: 700 }}>Read</span>
-              <BookOpen size={11} color="#080608" />
-            </div>
-          </div>
-        </div>
-      </Link>
-
-      {/* Featured story — cinematic */}
+      {/* ── Featured ────────────────────────────────────── */}
       {featured && (
-        <Link href={`/stories/${featured.id}`} className="block mx-5 mb-8">
-          <div className="relative overflow-hidden rounded-[20px]" style={{ height: 310 }}>
+        <Link href={`/stories/${featured.id}`} className="block mx-5 mb-10">
+          <div className="relative overflow-hidden" style={{ borderRadius: 24, height: 400 }}>
+            {/* Photo */}
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `url(${getCover(featured.category, 0)})`,
-                filter: 'brightness(0.28) saturate(0.6)',
+                filter: 'brightness(0.38) saturate(0.55)',
               }}
             />
-            {/* Category colour wash */}
-            <div className="absolute inset-0" style={{ background: categoryTint[featured.category] ?? categoryTint.REAL_TALK }} />
+            {/* Colour wash */}
+            <div
+              className="absolute inset-0"
+              style={{ background: `linear-gradient(135deg, ${featuredAccent}2A 0%, transparent 55%)` }}
+            />
             {/* Bottom fade */}
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 20%, rgba(8,6,8,0.99) 100%)' }} />
+            <div
+              className="absolute inset-0"
+              style={{ background: 'linear-gradient(180deg, transparent 28%, rgba(7,5,10,0.97) 100%)' }}
+            />
 
-            <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full" style={{ backgroundColor: 'rgba(166,106,134,0.18)', border: '1px solid rgba(166,106,134,0.25)' }}>
-              <span style={{ color: '#A66A86', fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>✦ Featured</span>
+            {/* Featured badge */}
+            <div className="absolute top-5 left-5">
+              <span style={{
+                fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
+                color: featuredAccent,
+                backgroundColor: `${featuredAccent}22`,
+                border: `1px solid ${featuredAccent}55`,
+                padding: '5px 12px', borderRadius: 9999,
+              }}>
+                ✦ Featured
+              </span>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-              <span style={{ color: '#A66A86', fontSize: 10, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+            {/* Text */}
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <p style={{ color: featuredAccent, fontSize: 10, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10 }}>
                 {categoryLabels[featured.category]}
-              </span>
+              </p>
               {featured.title && (
-                <h2 style={{ color: '#ffffff', fontSize: 21, fontWeight: 700, lineHeight: 1.25, marginTop: 6, marginBottom: 10, letterSpacing: '-0.01em' }}>
+                <h2 style={{ color: '#ffffff', fontSize: 23, fontWeight: 700, lineHeight: 1.25, letterSpacing: '-0.02em', marginBottom: 10 }}>
                   {featured.title}
                 </h2>
               )}
-              <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 12, lineHeight: 1.7, marginBottom: 14 }}>
-                {featured.body.slice(0, 110)}…
+              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 13, lineHeight: 1.65, marginBottom: 22 }}>
+                {featured.body.slice(0, 105)}…
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
-                  <Heart size={11} strokeWidth={1.5} color="rgba(255,255,255,0.25)" />
-                  <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.25)' }}>{featured._count.likes}</span>
+                  <Heart size={12} strokeWidth={1.5} color="rgba(255,255,255,0.25)" />
+                  <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)' }}>{featured._count.likes}</span>
                 </div>
-                <div className="flex items-center gap-1 px-3.5 py-1.5 rounded-full" style={{ backgroundColor: '#A66A86' }}>
-                  <span style={{ color: '#080608', fontSize: 11, fontWeight: 700 }}>Read now</span>
-                  <ChevronRight size={11} color="#080608" />
+                <div
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full"
+                  style={{ backgroundColor: featuredAccent }}
+                >
+                  <span style={{ color: '#fff', fontSize: 12, fontWeight: 700 }}>Read now</span>
+                  <ChevronRight size={12} color="#fff" />
                 </div>
               </div>
             </div>
@@ -155,44 +151,53 @@ export default async function StoriesPage() {
         </Link>
       )}
 
-      {/* Category shelves */}
+      {/* ── Category shelves ─────────────────────────────── */}
       {categories.map(cat => {
         const catStories = byCategory[cat]
-        if (!catStories || catStories.length === 0) return null
-        const tint = categoryTint[cat] ?? categoryTint.REAL_TALK
+        if (!catStories?.length) return null
+        const accent = categoryAccent[cat] ?? '#A66A86'
+
         return (
-          <section key={cat} className="mb-8">
-            <div className="flex items-center justify-between px-5 mb-3">
-              <h2 style={{ color: '#ffffff', fontSize: 14, fontWeight: 600, letterSpacing: '0.01em' }}>
-                {categoryLabels[cat]}
-              </h2>
-              <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: 11 }}>{catStories.length} stories</span>
+          <section key={cat} className="mb-10">
+            {/* Section header */}
+            <div className="flex items-center justify-between px-5 mb-4">
+              <div className="flex items-center gap-2.5">
+                <div style={{ width: 3, height: 15, borderRadius: 9999, backgroundColor: accent }} />
+                <h2 style={{ color: '#ffffff', fontSize: 15, fontWeight: 600, letterSpacing: '-0.01em' }}>
+                  {categoryLabels[cat]}
+                </h2>
+              </div>
+              <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: 11 }}>
+                {catStories.length} stories
+              </span>
             </div>
 
+            {/* Cards */}
             <div className="flex gap-3 px-5 overflow-x-auto scrollbar-hide" style={{ paddingBottom: 4 }}>
               {catStories.map((story, idx) => (
-                <Link key={story.id} href={`/stories/${story.id}`} className="flex-shrink-0" style={{ width: 125 }}>
-                  <div className="relative overflow-hidden rounded-[14px] mb-2" style={{ height: 180 }}>
-                    {/* Base photo */}
+                <Link key={story.id} href={`/stories/${story.id}`} className="flex-shrink-0" style={{ width: 130 }}>
+                  <div className="relative overflow-hidden mb-2.5" style={{ borderRadius: 16, height: 190 }}>
                     <div
                       className="absolute inset-0 bg-cover bg-center"
-                      style={{ backgroundImage: `url(${getCover(story.category, idx)})`, filter: 'brightness(0.35) saturate(0.5)' }}
+                      style={{ backgroundImage: `url(${getCover(story.category, idx)})`, filter: 'brightness(0.35) saturate(0.45)' }}
                     />
-                    {/* Category colour wash for editorial feel */}
-                    <div className="absolute inset-0" style={{ background: tint }} />
-                    {/* Bottom fade for title */}
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 45%, rgba(8,6,8,0.97) 100%)' }} />
+                    <div className="absolute inset-0" style={{ background: `${accent}2A` }} />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 42%, rgba(7,5,10,0.97) 100%)' }} />
                     <div className="absolute bottom-0 left-0 right-0 p-3">
-                      {story.title && (
+                      {story.title ? (
                         <p style={{ color: '#ffffff', fontSize: 11, fontWeight: 600, lineHeight: 1.35 }}>
-                          {story.title.length > 32 ? story.title.slice(0, 32) + '…' : story.title}
+                          {story.title.length > 36 ? story.title.slice(0, 36) + '…' : story.title}
+                        </p>
+                      ) : (
+                        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 10, lineHeight: 1.4 }}>
+                          {story.body.slice(0, 42)}…
                         </p>
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center gap-1.5">
-                    <Heart size={10} strokeWidth={1.5} color="rgba(255,255,255,0.2)" />
-                    <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.2)' }}>{story._count.likes}</span>
+                  <div className="flex items-center gap-1">
+                    <Heart size={9} strokeWidth={1.5} color="rgba(255,255,255,0.2)" />
+                    <span style={{ fontSize: 9, color: 'rgba(255,255,255,0.2)' }}>{story._count.likes}</span>
                   </div>
                 </Link>
               ))}
@@ -200,6 +205,33 @@ export default async function StoriesPage() {
           </section>
         )
       })}
+
+      {/* ── Series invitation — feels organic, not like an ad ── */}
+      <Link href="/series" className="block mx-5 mt-4">
+        <div
+          className="relative overflow-hidden"
+          style={{ borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.055)' }}
+        >
+          <div className="flex items-center justify-between px-6 py-5">
+            <div>
+              <p style={{ color: 'rgba(255,255,255,0.2)', fontSize: 9, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 8 }}>
+                Erotica Series
+              </p>
+              <p style={{ color: '#ffffff', fontSize: 17, fontWeight: 700, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+                Longer stories.{'\n'}Deeper worlds.
+              </p>
+            </div>
+            <div
+              className="flex items-center gap-2 px-4 py-2.5 rounded-full flex-shrink-0"
+              style={{ backgroundColor: 'rgba(166,106,134,0.12)', border: '1px solid rgba(166,106,134,0.2)' }}
+            >
+              <span style={{ color: '#A66A86', fontSize: 12, fontWeight: 600 }}>Explore</span>
+              <ChevronRight size={12} color="#A66A86" />
+            </div>
+          </div>
+        </div>
+      </Link>
+
     </div>
   )
 }

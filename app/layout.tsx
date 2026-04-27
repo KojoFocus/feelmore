@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
-import BottomNav from '@/components/layout/BottomNav'
+import BottomNavWrapper from '@/components/layout/BottomNavWrapper'
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -18,8 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${jakarta.variable} font-sans antialiased`}>
-        <main className="pb-20">{children}</main>
-        <BottomNav />
+        <BottomNavWrapper>{children}</BottomNavWrapper>
       </body>
     </html>
   )

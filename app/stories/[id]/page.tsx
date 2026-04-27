@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
-import { ChevronLeft, Heart, MessageCircle } from 'lucide-react'
+import { ChevronLeft, Heart, MessageCircle, ShoppingBag } from 'lucide-react'
 
 const categoryLabels: Record<string, string> = {
   REAL_TALK: 'Real talk',
@@ -27,7 +27,7 @@ export default async function StoryReaderPage({
   const data = await fetchStoryWithNeighbors(params.id).catch(() => null)
   if (!data) return notFound()
 
-  const { story, prev, next } = data
+  const { story, prev, next, product } = data
   const label = categoryLabels[story.category] ?? story.category
   const bg = categoryBg[story.category] ?? categoryBg.REAL_TALK
   const paragraphs = story.body.split('\n').filter(Boolean)

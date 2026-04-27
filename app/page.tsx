@@ -36,7 +36,7 @@ export default async function Home() {
       <StoriesRow stories={serializedStories} />
 
       {/* Swipeable story cards — snap one at a time, peek next */}
-      <div style={{ flex: 1, minHeight: 0, paddingTop: 4, paddingLeft: 16, paddingRight: 0, overflow: 'hidden' }}>
+      <div style={{ flex: 1, minHeight: 0, paddingTop: 4, paddingLeft: 16, paddingRight: 16, overflow: 'hidden' }}>
         <StoryCard stories={serializedStories} />
       </div>
 
