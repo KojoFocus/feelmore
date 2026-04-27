@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Heart, MessageCircle } from 'lucide-react'
 
@@ -12,17 +14,17 @@ type Story = {
 }
 
 const categoryLabels: Record<string, string> = {
-  REAL_TALK: 'Real talk',
-  WOMEN_SAY: 'Women say',
+  REAL_TALK:   'Real talk',
+  WOMEN_SAY:   'Women say',
   FOR_COUPLES: 'For couples',
-  TIPS: 'Tips',
+  TIPS:        'Tips',
 }
 
-const categoryAccent: Record<string, string> = {
-  REAL_TALK:   'rgba(90,30,50,0.35)',
-  WOMEN_SAY:   'rgba(60,20,70,0.35)',
-  FOR_COUPLES: 'rgba(50,25,60,0.35)',
-  TIPS:        'rgba(30,40,70,0.35)',
+const categoryBg: Record<string, string> = {
+  REAL_TALK:   'https://images.unsplash.com/photo-1607690702277-ea1684b8aa89?w=600&h=500&fit=crop&q=80',
+  WOMEN_SAY:   'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&h=500&fit=crop&q=80',
+  FOR_COUPLES: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=500&fit=crop&q=80',
+  TIPS:        'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&h=500&fit=crop&q=80',
 }
 
 function timeAgo(date: Date | string): string {
@@ -35,21 +37,25 @@ function timeAgo(date: Date | string): string {
   return `${Math.floor(h / 24)}d ago`
 }
 
-export default function StoryCard({ story }: { story: Story }) {
+function Card({ story }: { story: Story }) {
   const label = categoryLabels[story.category] ?? story.category
-  const accent = categoryAccent[story.category] ?? categoryAccent.REAL_TALK
+  const bg = categoryBg[story.category] ?? categoryBg.REAL_TALK
 
   return (
-    <div className="relative overflow-hidden h-full" style={{ borderRadius: 18, backgroundColor: '#0E0B09' }}>
-      {/* Subtle colour tint in the right corner — no image, no noise */}
+    <div className="relative overflow-hidden h-full" style={{ borderRadius: 18, backgroundColor: '#100C0A' }}>
+      {/* Background fabric texture — right half only */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bg})`, filter: 'brightness(0.55) saturate(0.7)' }}
+      />
+      {/* Dark overlay: solid left → transparent right */}
       <div
         className="absolute inset-0"
-        style={{ background: `radial-gradient(ellipse at 100% 50%, ${accent} 0%, transparent 70%)` }}
+        style={{ background: 'linear-gradient(to right, rgba(16,12,10,0.97) 0%, rgba(16,12,10,0.9) 38%, rgba(16,12,10,0.3) 68%, rgba(16,12,10,0.05) 100%)' }}
       />
 
       <div className="relative h-full flex flex-col px-5 py-4">
-
-        {/* Top: category · time · ··· */}
+        {/* Top row */}
         <div className="flex items-center justify-between flex-shrink-0 mb-4">
           <div className="flex items-center gap-2">
             <span style={{ color: '#A66A86', fontSize: 13, fontWeight: 600 }}>{label}</span>
@@ -58,14 +64,14 @@ export default function StoryCard({ story }: { story: Story }) {
           <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: 18, letterSpacing: 2, lineHeight: 1 }}>···</span>
         </div>
 
-        {/* Body — fills space */}
+        {/* Body */}
         <div className="flex-1 min-h-0 overflow-hidden">
           <p style={{ color: '#ffffff', fontSize: 17, fontWeight: 400, lineHeight: 1.65 }}>
             {story.body}
           </p>
         </div>
 
-        {/* Bottom: likes · comments · Read more */}
+        {/* Bottom row */}
         <div className="flex items-center justify-between flex-shrink-0 pt-4">
           <div className="flex items-center gap-5">
             <div className="flex items-center gap-1.5">
@@ -82,6 +88,31 @@ export default function StoryCard({ story }: { story: Story }) {
           </Link>
         </div>
       </div>
+    </div>
+  )
+}
+
+export default function StoryCard({ stories }: { stories: Story[] }) {
+  if (!stories.length) return null
+
+  return (
+    <div
+      className="flex overflow-x-auto scrollbar-hide h-full"
+      style={{
+        scrollSnapType: 'x mandatory',
+        WebkitOverflowScrolling: 'touch',
+        gap: 10,
+      }}
+    >
+      {stories.slice(0, 8).map(story => (
+        <div
+          key={story.id}
+          className="flex-shrink-0 h-full"
+          style={{ width: 'calc(100% - 28px)', scrollSnapAlign: 'start' }}
+        >
+          <Card story={story} />
+        </div>
+      ))}
     </div>
   )
 }

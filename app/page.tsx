@@ -22,8 +22,6 @@ export default async function Home() {
     createdAt: s.createdAt.toISOString(),
   }))
 
-  const featuredStory = serializedStories[0] ?? null
-
   return (
     <div
       style={{
@@ -37,12 +35,9 @@ export default async function Home() {
       <Header />
       <StoriesRow stories={serializedStories} />
 
-      {/* Story card grows to fill remaining space */}
-      <div style={{ flex: 1, minHeight: 0, padding: '4px 16px 0' }}>
-        {featuredStory
-          ? <StoryCard story={featuredStory} />
-          : <div style={{ height: '100%', borderRadius: 18, backgroundColor: '#0E0B08' }} />
-        }
+      {/* Swipeable story cards — snap one at a time, peek next */}
+      <div style={{ flex: 1, minHeight: 0, paddingTop: 4, paddingLeft: 16, paddingRight: 0, overflow: 'hidden' }}>
+        <StoryCard stories={serializedStories} />
       </div>
 
       <ProductRow
