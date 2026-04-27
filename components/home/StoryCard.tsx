@@ -37,6 +37,11 @@ function timeAgo(date: Date | string): string {
   return `${Math.floor(h / 24)}d ago`
 }
 
+function truncate(text: string, max = 100): string {
+  if (text.length <= max) return text
+  return text.slice(0, max).replace(/\s\S+$/, '') + '…'
+}
+
 function Card({ story }: { story: Story }) {
   const label = categoryLabels[story.category] ?? story.category
   const bg = categoryBg[story.category] ?? categoryBg.REAL_TALK
@@ -67,7 +72,7 @@ function Card({ story }: { story: Story }) {
         {/* Body */}
         <div className="flex-1 min-h-0 overflow-hidden">
           <p style={{ color: '#ffffff', fontSize: 16, fontWeight: 600, lineHeight: 1.5, letterSpacing: '-0.02em', textAlign: 'left', maxWidth: '62%' }}>
-            {story.body}
+            {truncate(story.body)}
           </p>
         </div>
 
