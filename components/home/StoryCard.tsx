@@ -66,7 +66,7 @@ function Card({ story }: { story: Story }) {
 
         {/* Body */}
         <div className="flex-1 min-h-0 overflow-hidden">
-          <p style={{ color: '#ffffff', fontSize: 17, fontWeight: 400, lineHeight: 1.65 }}>
+          <p style={{ color: '#ffffff', fontSize: 15, fontWeight: 400, lineHeight: 1.7, textAlign: 'left', maxWidth: '62%' }}>
             {story.body}
           </p>
         </div>
