@@ -24,11 +24,13 @@ export default async function Home() {
   return (
     <div
       style={{
-        height: '100dvh',
+        position: 'fixed',
+        inset: 0,
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
         paddingBottom: 62,
+        backgroundColor: '#0A080D',
       }}
     >
       <Header />
