@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     let adminUser = await prisma.user.findFirst({ where: { email: 'admin@feelmore.app' } })
     if (!adminUser) {
       adminUser = await prisma.user.create({
-        data: { email: 'admin@feelmore.app', name: 'Feelmore', password: '' },
+        data: { email: 'admin@feelmore.app', name: 'Feelmore' },
       })
     }
 
