@@ -25,7 +25,7 @@ export default function AddToCartButton({ productId, name, price, currency, imag
 
   if (added) {
     return (
-      <div className="flex gap-3 mb-6">
+      <div className="flex gap-3">
         <div className="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl"
           style={{ backgroundColor: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.2)' }}>
           <Check size={16} color="#22c55e" />
@@ -40,7 +40,7 @@ export default function AddToCartButton({ productId, name, price, currency, imag
   }
 
   return (
-    <div className="flex gap-3 mb-6">
+    <div className="flex gap-3">
       <button
         onClick={handleAdd}
         className="flex items-center justify-center gap-2 py-4 rounded-2xl"

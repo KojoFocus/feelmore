@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic'
 import { notFound } from 'next/navigation'
 import { prisma } from '@/lib/prisma'
 import AddToCartButton from './AddToCartButton'
+import WishlistButton from './WishlistButton'
 import Link from 'next/link'
 import { ChevronLeft, Star, Package } from 'lucide-react'
 
@@ -97,14 +98,19 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           )}
         </div>
 
-        {/* Add to cart */}
-        <AddToCartButton
-          productId={product.id}
-          name={product.name}
-          price={price}
-          currency={product.currency}
-          image={imgUrl ?? null}
-        />
+        {/* Add to cart + Buy Now + Wishlist */}
+        <div className="flex gap-3 mb-6">
+          <div className="flex-1">
+            <AddToCartButton
+              productId={product.id}
+              name={product.name}
+              price={price}
+              currency={product.currency}
+              image={imgUrl ?? null}
+            />
+          </div>
+          <WishlistButton productId={product.id} />
+        </div>
 
         {/* Stock */}
         {product.stock > 0 && (
