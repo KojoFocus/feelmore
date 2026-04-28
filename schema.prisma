@@ -1,3 +1,7 @@
+// This is your Prisma schema file
+// Platform: Adult products e-commerce (sex dolls, lubricants, accessories, etc.)
+// DB: Neon PostgreSQL
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,7 +18,7 @@ model User {
   id            String    @id @default(cuid())
   username      String?   @unique
   email         String?   @unique
-  password      String    // store bcrypt hash here
+  passwordHash  String?
   name          String?
   avatar        String?
   role          UserRole  @default(CUSTOMER)
@@ -22,11 +26,11 @@ model User {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
-  orders        Order[]
-  reviews       Review[]
-  wishlist      WishlistItem[]
-  addresses     Address[]
-  cart          CartItem[]
+  orders          Order[]
+  reviews         Review[]
+  wishlist        WishlistItem[]
+  addresses       Address[]
+  cart            CartItem[]
   stories         Story[]
   storyLikes      StoryLike[]
   storyComments   StoryComment[]
@@ -173,7 +177,7 @@ model CartItem {
   @@map("cart_items")
 }
 
-// ─── WISHLIST ────────────────────────────────────────────────────────────────
+// ─── WISHLIST ─────────────────────────────────────────────────────────────────
 
 model WishlistItem {
   id        String   @id @default(cuid())
@@ -190,20 +194,20 @@ model WishlistItem {
 // ─── ORDERS ──────────────────────────────────────────────────────────────────
 
 model Order {
-  id              String      @id @default(cuid())
-  userId          String
-  user            User        @relation(fields: [userId], references: [id])
-  status          OrderStatus @default(PENDING)
-  total           Decimal     @db.Decimal(10, 2)
-  currency        String      @default("GHS")
-  addressId       String?
-  address         Address?    @relation(fields: [addressId], references: [id])
-  paymentMethod   String?
-  paymentRef      String?
-  notes           String?
-  items           OrderItem[]
-  createdAt       DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
+  id            String      @id @default(cuid())
+  userId        String
+  user          User        @relation(fields: [userId], references: [id])
+  status        OrderStatus @default(PENDING)
+  total         Decimal     @db.Decimal(10, 2)
+  currency      String      @default("GHS")
+  addressId     String?
+  address       Address?    @relation(fields: [addressId], references: [id])
+  paymentMethod String?
+  paymentRef    String?
+  notes         String?
+  items         OrderItem[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
 
   @@map("orders")
 }
@@ -233,20 +237,225 @@ model OrderItem {
 // ─── ADDRESSES ───────────────────────────────────────────────────────────────
 
 model Address {
-  id         String  @id @default(cuid())
-  userId     String
-  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  fullName   String
-  phone      String
-  street     String
-  city       String
-  region     String
-  country    String  @default("Ghana")
-  isDefault  Boolean @default(false)
-  orders     Order[]
+  id        String  @id @default(cuid())
+  userId    String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fullName  String
+  phone     String
+  street    String
+  city      String
+  region    String
+  country   String  @default("Ghana")
+  isDefault Boolean @default(false)
+  orders    Order[]
 
   @@map("addresses")
 }
 
-// ─── STORIES, EROTICA, MESSAGING, BANNERS ────────────────────────────────────
-// (unchanged from your original schema)
+// ─── STORIES (Community / Real Talk) ─────────────────────────────────────────
+
+model Story {
+  id        String        @id @default(cuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category  StoryCategory @default(REAL_TALK)
+  title     String?
+  body      String
+  image     String?
+  isPublic  Boolean       @default(true)
+  likes     StoryLike[]
+  comments  StoryComment[]
+  createdAt DateTime      @default(now())
+
+  @@map("stories")
+}
+
+enum StoryCategory {
+  REAL_TALK
+  WOMEN_SAY
+  FOR_COUPLES
+  TIPS
+}
+
+model StoryLike {
+  storyId String
+  userId  String
+  story   Story  @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([storyId, userId])
+  @@map("story_likes")
+}
+
+model StoryComment {
+  id        String   @id @default(cuid())
+  storyId   String
+  userId    String
+  story     Story    @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  body      String
+  createdAt DateTime @default(now())
+
+  @@map("story_comments")
+}
+
+// ─── EROTICA SERIES ───────────────────────────────────────────────────────────
+
+model EroticaSeries {
+  id          String    @id @default(cuid())
+  authorId    String
+  author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  title       String
+  slug        String    @unique
+  description String
+  coverImage  String?
+  genre       String    @default("Romance")
+  isPublic    Boolean   @default(true)
+  isComplete  Boolean   @default(false)
+
+  episodes  EroticaEpisode[]
+  likes     EroticaSeriesLike[]
+  bookmarks EroticaBookmark[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("erotica_series")
+}
+
+model EroticaEpisode {
+  id         String        @id @default(cuid())
+  seriesId   String
+  series     EroticaSeries @relation(fields: [seriesId], references: [id], onDelete: Cascade)
+  title      String
+  slug       String
+  body       String        @db.Text
+  episodeNum Int
+  isFree     Boolean       @default(true)
+  readTime   Int           @default(5)
+
+  reactions EroticaReaction[]
+  comments  EroticaComment[]
+  reads     EroticaRead[]
+
+  createdAt DateTime @default(now())
+
+  @@unique([seriesId, episodeNum])
+  @@unique([seriesId, slug])
+  @@map("erotica_episodes")
+}
+
+model EroticaSeriesLike {
+  seriesId  String
+  userId    String
+  series    EroticaSeries @relation(fields: [seriesId], references: [id], onDelete: Cascade)
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime      @default(now())
+
+  @@id([seriesId, userId])
+  @@map("erotica_series_likes")
+}
+
+enum ReactionType {
+  FIRE
+  HEART
+  SHOCKED
+  CLAP
+}
+
+model EroticaReaction {
+  id        String         @id @default(cuid())
+  episodeId String
+  userId    String
+  episode   EroticaEpisode @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      ReactionType
+
+  @@unique([episodeId, userId, type])
+  @@map("erotica_reactions")
+}
+
+model EroticaComment {
+  id        String         @id @default(cuid())
+  episodeId String
+  userId    String
+  episode   EroticaEpisode @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  body      String
+  createdAt DateTime       @default(now())
+
+  @@map("erotica_comments")
+}
+
+model EroticaBookmark {
+  seriesId  String
+  userId    String
+  series    EroticaSeries @relation(fields: [seriesId], references: [id], onDelete: Cascade)
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime      @default(now())
+
+  @@id([seriesId, userId])
+  @@map("erotica_bookmarks")
+}
+
+model EroticaRead {
+  id        String         @id @default(cuid())
+  episodeId String
+  userId    String
+  episode   EroticaEpisode @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime       @default(now())
+
+  @@unique([episodeId, userId])
+  @@map("erotica_reads")
+}
+
+// ─── MESSAGING ────────────────────────────────────────────────────────────────
+
+model Conversation {
+  id        String    @id @default(cuid())
+  guestId   String
+  messages  Message[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("conversations")
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  type           MessageType  @default(TEXT)
+  body           String?
+  mediaUrl       String?
+  mimeType       String?
+  duration       Int?
+  isFromAdmin    Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+
+  @@map("messages")
+}
+
+enum MessageType {
+  TEXT
+  IMAGE
+  VIDEO
+  AUDIO
+  VOICE_NOTE
+}
+
+// ─── BANNERS / PROMOTIONS ─────────────────────────────────────────────────────
+
+model Banner {
+  id        String   @id @default(cuid())
+  title     String
+  subtitle  String?
+  image     String?
+  link      String?
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@map("banners")
+}
