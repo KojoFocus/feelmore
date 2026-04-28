@@ -27,7 +27,8 @@ const slugImg: Record<string, string> = {
 }
 
 function getImage(slug: string, dbImage: string | null) {
-  return dbImage ?? slugImg[slug] ?? null
+  if (!dbImage || dbImage.startsWith('/images/')) return slugImg[slug] ?? null
+  return dbImage
 }
 
 export default function WishlistPage() {

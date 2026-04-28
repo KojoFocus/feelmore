@@ -78,7 +78,7 @@ export default function OrdersPage() {
               {o.items.map((item, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 36, height: 36, borderRadius: 8, backgroundColor: '#1a1520', flexShrink: 0, overflow: 'hidden' }}>
-                    {(item.image ?? slugImg[item.slug]) && <img src={item.image ?? slugImg[item.slug]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+                    {(() => { const img = (!item.image || item.image.startsWith('/images/')) ? slugImg[item.slug] : item.image; return img ? <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : null })()}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.name}</p>
