@@ -25,7 +25,8 @@ export async function POST(req: Request) {
     res.cookies.set('fm_user', user.id, { httpOnly: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 30, path: '/' })
     return res
   } catch (err) {
-    console.error('[auth/signup]', err)
-    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 })
+    console.error('[auth/signup] FULL ERROR:', err)
+    const message = err instanceof Error ? err.message : String(err)
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }

@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma'
 
 export async function GET() {
   const products = await prisma.product.findMany({
-    include: { images: { where: { isPrimary: true }, take: 1 }, category: true },
+    include: { images: { orderBy: [{ isPrimary: 'desc' }, { order: 'asc' }], take: 1 }, category: true },
     orderBy: { createdAt: 'desc' },
   })
   return NextResponse.json(products.map(p => ({

@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ShoppingCart, Check } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { ShoppingCart, Check, Zap } from 'lucide-react'
 import { addToCart } from '@/lib/cart'
 import Link from 'next/link'
 
@@ -9,11 +10,17 @@ type Props = { productId: string; name: string; price: number; currency: string;
 
 export default function AddToCartButton({ productId, name, price, currency, image }: Props) {
   const [added, setAdded] = useState(false)
+  const router = useRouter()
 
   const handleAdd = () => {
     addToCart({ id: productId, productId, name, price, currency, image })
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
+  }
+
+  const handleBuyNow = () => {
+    addToCart({ id: productId, productId, name, price, currency, image })
+    router.push('/cart')
   }
 
   if (added) {
@@ -33,13 +40,24 @@ export default function AddToCartButton({ productId, name, price, currency, imag
   }
 
   return (
-    <button
-      onClick={handleAdd}
-      className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl mb-6"
-      style={{ backgroundColor: '#A66A86' }}
-    >
-      <ShoppingCart size={16} color="#0D0A08" strokeWidth={2} />
-      <span style={{ color: '#0D0A08', fontSize: 14, fontWeight: 700 }}>Add to cart</span>
-    </button>
+    <div className="flex gap-3 mb-6">
+      <button
+        onClick={handleAdd}
+        className="flex items-center justify-center gap-2 py-4 rounded-2xl"
+        style={{ flex: '0 0 auto', paddingLeft: 20, paddingRight: 20, backgroundColor: 'rgba(166,106,134,0.12)', border: '1px solid rgba(166,106,134,0.25)' }}
+      >
+        <ShoppingCart size={16} color="#A66A86" strokeWidth={2} />
+        <span style={{ color: '#A66A86', fontSize: 14, fontWeight: 700, whiteSpace: 'nowrap' }}>Add to cart</span>
+      </button>
+
+      <button
+        onClick={handleBuyNow}
+        className="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl"
+        style={{ backgroundColor: '#A66A86' }}
+      >
+        <Zap size={15} color="#0D0A08" strokeWidth={2.5} fill="#0D0A08" />
+        <span style={{ color: '#0D0A08', fontSize: 14, fontWeight: 700 }}>Buy Now</span>
+      </button>
+    </div>
   )
 }

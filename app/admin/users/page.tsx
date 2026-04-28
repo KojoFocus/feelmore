@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { ShoppingCart, BookOpen, Shield } from 'lucide-react'
 
 type User = {
@@ -12,6 +13,7 @@ export default function AdminUsers() {
   const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
+  const router = useRouter()
 
   useEffect(() => {
     fetch('/api/admin/users').then(r => r.json()).then(d => { setUsers(d); setLoading(false) })
@@ -38,10 +40,12 @@ export default function AdminUsers() {
       <div style={{ backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, overflow: 'hidden' }}>
         {loading && <p style={{ color: 'rgba(255,255,255,0.3)', padding: 24, textAlign: 'center' }}>Loading…</p>}
         {filtered.map((u, i) => (
-          <div key={u.id} style={{
-            display: 'flex', alignItems: 'center', gap: 14, padding: '14px 20px',
+          <div key={u.id} onClick={() => router.push(`/admin/users/${u.id}`)} style={{
+            display: 'flex', alignItems: 'center', gap: 14, padding: '14px 20px', cursor: 'pointer',
             borderBottom: i < filtered.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none',
-          }}>
+            transition: 'background 0.15s',
+          }} onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.03)') }
+             onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}>
             <div style={{ width: 38, height: 38, borderRadius: '50%', backgroundColor: 'rgba(166,106,134,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <span style={{ color: '#A66A86', fontSize: 14, fontWeight: 700 }}>{(u.name ?? u.email)[0].toUpperCase()}</span>
             </div>
