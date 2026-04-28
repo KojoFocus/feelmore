@@ -27,7 +27,7 @@ export default async function StoryReaderPage({
   const data = await fetchStoryWithNeighbors(params.id).catch(() => null)
   if (!data) return notFound()
 
-  const { story, prev, next, product } = data
+  const { story, prev, next } = data
   const label = categoryLabels[story.category] ?? story.category
   const bg = categoryBg[story.category] ?? categoryBg.REAL_TALK
   const paragraphs = story.body.split('\n').filter(Boolean)
