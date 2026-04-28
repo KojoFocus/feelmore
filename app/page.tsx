@@ -29,7 +29,7 @@ export default async function Home() {
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
-        paddingBottom: 62,
+        paddingBottom: 'calc(62px + 3dvh)',
         backgroundColor: '#0A080D',
       }}
     >
