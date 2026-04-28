@@ -66,6 +66,9 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           <img src={imgUrl} alt={product.name} className="w-full h-full object-cover" style={{ opacity: 0.55, mixBlendMode: 'luminosity' }} />
         )}
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(8,9,13,0.1) 0%, rgba(8,9,13,1) 100%)' }} />
+        <div className="absolute top-3 right-4">
+          <WishlistButton productId={product.id} />
+        </div>
       </div>
 
       {/* Info */}
@@ -98,19 +101,14 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           )}
         </div>
 
-        {/* Add to cart + Buy Now + Wishlist */}
-        <div className="flex gap-3 mb-6">
-          <div className="flex-1">
-            <AddToCartButton
-              productId={product.id}
-              name={product.name}
-              price={price}
-              currency={product.currency}
-              image={imgUrl ?? null}
-            />
-          </div>
-          <WishlistButton productId={product.id} />
-        </div>
+        {/* Add to cart + Buy Now */}
+        <AddToCartButton
+          productId={product.id}
+          name={product.name}
+          price={price}
+          currency={product.currency}
+          image={imgUrl ?? null}
+        />
 
         {/* Stock */}
         {product.stock > 0 && (

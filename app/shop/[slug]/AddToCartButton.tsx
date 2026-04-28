@@ -25,14 +25,12 @@ export default function AddToCartButton({ productId, name, price, currency, imag
 
   if (added) {
     return (
-      <div className="flex gap-3">
-        <div className="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl"
-          style={{ backgroundColor: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.2)' }}>
-          <Check size={16} color="#22c55e" />
-          <span style={{ color: '#22c55e', fontSize: 14, fontWeight: 700 }}>Added to cart</span>
+      <div className="flex gap-3 mb-5">
+        <div className="flex-1 flex items-center justify-center gap-2 rounded-2xl" style={{ height: 52, backgroundColor: 'rgba(34,197,94,0.12)', border: '1px solid rgba(34,197,94,0.2)' }}>
+          <Check size={15} color="#22c55e" />
+          <span style={{ color: '#22c55e', fontSize: 14, fontWeight: 700 }}>Added!</span>
         </div>
-        <Link href="/cart" className="flex items-center justify-center px-5 rounded-2xl"
-          style={{ backgroundColor: '#A66A86', fontSize: 13, fontWeight: 600, color: '#0D0A08', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+        <Link href="/cart" className="flex items-center justify-center px-5 rounded-2xl" style={{ height: 52, backgroundColor: '#A66A86', fontSize: 13, fontWeight: 700, color: '#fff', textDecoration: 'none', whiteSpace: 'nowrap' }}>
           View cart →
         </Link>
       </div>
@@ -40,23 +38,23 @@ export default function AddToCartButton({ productId, name, price, currency, imag
   }
 
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 mb-5">
       <button
         onClick={handleAdd}
-        className="flex items-center justify-center gap-2 py-4 rounded-2xl"
-        style={{ flex: '0 0 auto', paddingLeft: 20, paddingRight: 20, backgroundColor: 'rgba(166,106,134,0.12)', border: '1px solid rgba(166,106,134,0.25)' }}
+        className="flex-1 flex items-center justify-center gap-2 rounded-2xl"
+        style={{ height: 52, backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
       >
-        <ShoppingCart size={16} color="#A66A86" strokeWidth={2} />
-        <span style={{ color: '#A66A86', fontSize: 14, fontWeight: 700, whiteSpace: 'nowrap' }}>Add to cart</span>
+        <ShoppingCart size={16} color="rgba(255,255,255,0.7)" strokeWidth={1.8} />
+        <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14, fontWeight: 600 }}>Add to cart</span>
       </button>
 
       <button
         onClick={handleBuyNow}
-        className="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl"
-        style={{ backgroundColor: '#A66A86' }}
+        className="flex-1 flex items-center justify-center gap-2 rounded-2xl"
+        style={{ height: 52, backgroundColor: '#A66A86' }}
       >
-        <Zap size={15} color="#0D0A08" strokeWidth={2.5} fill="#0D0A08" />
-        <span style={{ color: '#0D0A08', fontSize: 14, fontWeight: 700 }}>Buy Now</span>
+        <Zap size={15} color="#fff" strokeWidth={2.5} fill="#fff" />
+        <span style={{ color: '#fff', fontSize: 14, fontWeight: 700 }}>Buy Now</span>
       </button>
     </div>
   )

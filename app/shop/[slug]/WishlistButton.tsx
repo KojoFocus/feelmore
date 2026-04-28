@@ -34,18 +34,18 @@ export default function WishlistButton({ productId }: { productId: string }) {
   return (
     <button
       onClick={toggle}
-      title={wishlisted ? 'Remove from wishlist' : 'Save to wishlist'}
       style={{
-        width: 42, height: 42, borderRadius: 12, flexShrink: 0,
-        backgroundColor: wishlisted ? 'rgba(166,106,134,0.15)' : 'rgba(255,255,255,0.05)',
-        border: `1px solid ${wishlisted ? 'rgba(166,106,134,0.3)' : 'rgba(255,255,255,0.08)'}`,
+        width: 38, height: 38, borderRadius: '50%',
+        backgroundColor: 'rgba(10,8,13,0.65)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255,255,255,0.1)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        cursor: 'pointer', transition: 'all 0.2s',
+        cursor: 'pointer',
       }}
     >
       <Heart
-        size={17}
-        color={wishlisted ? '#A66A86' : 'rgba(255,255,255,0.4)'}
+        size={16}
+        color={wishlisted ? '#A66A86' : 'rgba(255,255,255,0.7)'}
         fill={wishlisted ? '#A66A86' : 'none'}
         strokeWidth={1.8}
       />
