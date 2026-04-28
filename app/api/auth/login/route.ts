@@ -9,13 +9,14 @@ export async function POST(req: Request) {
     const { username, password } = await req.json()
     if (!username || !password) return NextResponse.json({ error: 'Username and password required' }, { status: 400 })
 
-    const user = await prisma.user.findUnique({ where: { username: username.trim().toLowerCase() } })
+    const fakeEmail = `${username.trim().toLowerCase()}@feelmore.internal`
+    const user = await prisma.user.findUnique({ where: { email: fakeEmail } })
     if (!user || !user.passwordHash) return NextResponse.json({ error: 'Invalid username or password' }, { status: 401 })
 
     const valid = await bcrypt.compare(password, user.passwordHash)
     if (!valid) return NextResponse.json({ error: 'Invalid username or password' }, { status: 401 })
 
-    const res = NextResponse.json({ id: user.id, username: user.username, name: user.name })
+    const res = NextResponse.json({ id: user.id, username: username.trim().toLowerCase(), name: user.name })
     res.cookies.set('fm_user', user.id, { httpOnly: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 30, path: '/' })
     return res
   } catch (err) {

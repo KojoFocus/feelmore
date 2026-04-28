@@ -11,15 +11,17 @@ export async function POST(req: Request) {
     if (password.length < 6) return NextResponse.json({ error: 'Password must be at least 6 characters' }, { status: 400 })
 
     const clean = username.trim().toLowerCase()
-    const existing = await prisma.user.findUnique({ where: { username: clean } })
+    const fakeEmail = `${clean}@feelmore.internal`
+
+    const existing = await prisma.user.findUnique({ where: { email: fakeEmail } })
     if (existing) return NextResponse.json({ error: 'Username already taken' }, { status: 409 })
 
     const passwordHash = await bcrypt.hash(password, 10)
     const user = await prisma.user.create({
-      data: { username: clean, name: username.trim(), passwordHash },
+      data: { email: fakeEmail, name: username.trim(), passwordHash },
     })
 
-    const res = NextResponse.json({ id: user.id, username: user.username, name: user.name })
+    const res = NextResponse.json({ id: user.id, username: clean, name: user.name })
     res.cookies.set('fm_user', user.id, { httpOnly: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 30, path: '/' })
     return res
   } catch (err) {

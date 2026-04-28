@@ -29,14 +29,12 @@ export default function CommunityBanner() {
   return (
     <section className="flex-shrink-0" style={{ margin: '4px 20px 0' }}>
       <div className="relative rounded-2xl overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: b.image ? `url(${b.image})` : undefined,
-            backgroundColor: b.image ? undefined : 'transparent',
-            filter: 'brightness(0.18) saturate(0.3)',
-          }}
-        />
+        {b.image && !b.image.startsWith('/images/') && (
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${b.image})`, filter: 'brightness(0.18) saturate(0.3)' }}
+          />
+        )}
         <div className="absolute inset-0" style={{ background: 'linear-gradient(100deg, rgba(10,4,8,0.98) 50%, rgba(18,8,14,0.8) 100%)' }} />
 
         <div className="relative flex items-center justify-between px-4 py-2">
