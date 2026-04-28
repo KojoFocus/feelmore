@@ -54,9 +54,17 @@ export default function CartPage() {
   const total = cartTotal(items)
   const currency = items[0]?.currency ?? 'GHS'
 
-  const placeOrder = () => {
+  const placeOrder = async () => {
     const msg = buildWhatsAppMessage(items, form.name, form.phone, form.location)
     const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`
+
+    // Save order to DB (best-effort — don't block checkout if it fails)
+    fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items, total, currency }),
+    }).catch(() => {})
+
     clearCart()
     setItems([])
     window.open(url, '_blank')

@@ -4,7 +4,18 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowLeft, Package } from 'lucide-react'
 
-type OrderItem = { name: string; image: string | null; qty: number; price: number }
+type OrderItem = { name: string; slug: string; image: string | null; qty: number; price: number }
+
+const slugImg: Record<string, string> = {
+  'luna-mini':                   'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=200&h=200&fit=crop',
+  'vibe-ring':                   'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=200&h=200&fit=crop',
+  'rose-bullet':                 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200&h=200&fit=crop',
+  'g-spot-pro':                  'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop',
+  'silk-glide-water-based':      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&h=200&fit=crop',
+  'velvet-silicone-lube':        'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=200&h=200&fit=crop',
+  'double-trouble-couples-vibe': 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200&h=200&fit=crop',
+  'magic-wand-massager':         'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=200&h=200&fit=crop',
+}
 type Order = { id: string; status: string; total: number; currency: string; createdAt: string; items: OrderItem[] }
 
 const STATUS_COLOR: Record<string, string> = {
@@ -67,7 +78,7 @@ export default function OrdersPage() {
               {o.items.map((item, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 36, height: 36, borderRadius: 8, backgroundColor: '#1a1520', flexShrink: 0, overflow: 'hidden' }}>
-                    {item.image && <img src={item.image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+                    {(item.image ?? slugImg[item.slug]) && <img src={item.image ?? slugImg[item.slug]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.name}</p>
