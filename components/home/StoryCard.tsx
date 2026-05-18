@@ -49,9 +49,9 @@ function Card({ story }: { story: Story }) {
         style={{ background: 'linear-gradient(to right, rgba(16,12,10,0.98) 0%, rgba(16,12,10,0.92) 42%, rgba(16,12,10,0.4) 70%, rgba(16,12,10,0.05) 100%)' }}
       />
 
-      <div className="relative h-full flex flex-col px-5 pt-4 pb-4">
+      <div className="relative h-full flex flex-col px-5 pt-3 pb-3">
         {/* Header row */}
-        <div className="flex items-center justify-between flex-shrink-0 mb-4">
+        <div className="flex items-center justify-between flex-shrink-0 mb-3">
           <div className="flex items-center gap-2">
             <span style={{ color: '#A66A86', fontSize: 12, fontWeight: 600 }}>{label}</span>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: 12 }}>·</span>
@@ -63,17 +63,17 @@ function Card({ story }: { story: Story }) {
         </div>
 
         {/* Story body — big text */}
-        <div className="flex-1 min-h-0 flex flex-col justify-center">
+        <div className="flex-1 min-h-0 flex flex-col justify-center overflow-hidden">
           <p style={{
             color: 'rgba(255,255,255,0.9)',
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: 500,
-            lineHeight: 1.55,
+            lineHeight: 1.5,
             letterSpacing: '-0.01em',
-            maxWidth: '68%',
+            maxWidth: '70%',
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: 6,
+            WebkitLineClamp: 5,
             overflow: 'hidden',
           } as React.CSSProperties}>
             {story.body}
@@ -81,7 +81,7 @@ function Card({ story }: { story: Story }) {
         </div>
 
         {/* Footer row */}
-        <div className="flex items-center justify-between flex-shrink-0 mt-3">
+        <div className="flex items-center justify-between flex-shrink-0 mt-2">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
               <Heart size={13} strokeWidth={1.5} color="rgba(255,255,255,0.3)" />
