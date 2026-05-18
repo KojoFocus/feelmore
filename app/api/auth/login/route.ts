@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     const valid = await bcrypt.compare(password, user.passwordHash)
     if (!valid) return NextResponse.json({ error: 'Invalid username or password' }, { status: 401 })
 
-    const res = NextResponse.json({ id: user.id, username: username.trim().toLowerCase(), name: user.name })
+    const res = NextResponse.json({ id: user.id, username: username.trim().toLowerCase(), name: user.name, onboardingDone: user.onboardingDone })
     res.cookies.set('fm_user', user.id, { httpOnly: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 30, path: '/' })
     return res
   } catch (err) {

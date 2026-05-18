@@ -11,8 +11,13 @@ body {
   color: #ffffff;
   max-width: 430px;
   margin: 0 auto;
+  font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
 }
 
 .scrollbar-hide::-webkit-scrollbar { display: none; }

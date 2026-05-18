@@ -26,7 +26,7 @@ export default function SignupPage() {
       setError(data.error ?? 'Something went wrong')
       setLoading(false)
     } else {
-      router.push('/profile')
+      router.push('/onboarding')
     }
   }
 

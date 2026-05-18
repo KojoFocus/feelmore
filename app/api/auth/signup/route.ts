@@ -21,7 +21,7 @@ export async function POST(req: Request) {
       data: { email: fakeEmail, name: username.trim(), passwordHash },
     })
 
-    const res = NextResponse.json({ id: user.id, username: clean, name: user.name })
+    const res = NextResponse.json({ id: user.id, username: clean, name: user.name, onboardingDone: false })
     res.cookies.set('fm_user', user.id, { httpOnly: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 30, path: '/' })
     return res
   } catch (err) {

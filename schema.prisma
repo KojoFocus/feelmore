@@ -15,15 +15,17 @@ datasource db {
 // ─── USERS ───────────────────────────────────────────────────────────────────
 
 model User {
-  id            String    @id @default(cuid())
-  email         String?   @unique
-  passwordHash  String?
-  name          String?
-  avatar        String?
-  role          UserRole  @default(CUSTOMER)
-  verified      Boolean   @default(false)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id              String    @id @default(cuid())
+  email           String?   @unique
+  passwordHash    String?
+  name            String?
+  avatar          String?
+  role            UserRole  @default(CUSTOMER)
+  verified        Boolean   @default(false)
+  onboardingDone  Boolean   @default(false)
+  preferences     String[]  @default([])
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
 
   orders          Order[]
   reviews         Review[]

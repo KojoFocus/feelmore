@@ -26,7 +26,7 @@ export default function LoginPage() {
       setError(data.error ?? 'Something went wrong')
       setLoading(false)
     } else {
-      router.push('/profile')
+      router.push(data.onboardingDone ? '/' : '/onboarding')
     }
   }
 
@@ -34,10 +34,10 @@ export default function LoginPage() {
     <div style={{ minHeight: '100dvh', backgroundColor: '#0A080D', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 20px' }}>
       <div style={{ width: '100%', maxWidth: 380 }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
-          <p style={{ color: '#ffffff', fontSize: 28, fontWeight: 700, letterSpacing: '-0.02em' }}>
+          <p style={{ fontFamily: 'var(--font-playfair)', color: '#ffffff', fontSize: 30, fontWeight: 600, letterSpacing: '-0.01em' }}>
             feel<span style={{ color: '#A66A86' }}>more.</span>
           </p>
-          <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 13, marginTop: 6 }}>Welcome back</p>
+          <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: 13, marginTop: 6 }}>Come back. We kept your space warm.</p>
         </div>
 
         <form onSubmit={submit}>
