@@ -66,7 +66,7 @@ function Card({ story }: { story: Story }) {
         <div className="flex-1 min-h-0 flex flex-col justify-center">
           <p style={{
             color: 'rgba(255,255,255,0.9)',
-            fontSize: 20,
+            fontSize: 15,
             fontWeight: 500,
             lineHeight: 1.55,
             letterSpacing: '-0.01em',
