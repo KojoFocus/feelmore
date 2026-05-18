@@ -74,8 +74,9 @@ export default function CartPage() {
     return (
       <div style={{ minHeight: '100dvh', backgroundColor: '#08090D', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, padding: '0 24px' }}>
         <ShoppingBag size={40} color="rgba(255,255,255,0.08)" />
-        <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 14 }}>Your cart is empty</p>
-        <Link href="/shop" style={{ color: '#A66A86', fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>Browse products →</Link>
+        <p style={{ color: '#fff', fontSize: 16, fontWeight: 600, fontFamily: 'var(--font-playfair)' }}>Nothing here yet.</p>
+        <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 13, textAlign: 'center' }}>Take your time. Browse quietly.</p>
+        <Link href="/shop" style={{ color: '#A66A86', fontSize: 14, fontWeight: 600, textDecoration: 'none', marginTop: 4 }}>Explore the shop →</Link>
       </div>
     )
   }
@@ -90,7 +91,7 @@ export default function CartPage() {
               ←
             </button>
           )}
-          <p style={{ color: '#fff', fontSize: 18, fontWeight: 700 }}>{step === 'cart' ? 'Your cart' : 'Checkout'}</p>
+          <p style={{ color: '#fff', fontSize: 18, fontWeight: 700 }}>{step === 'cart' ? 'Your bag' : 'Checkout'}</p>
           {step === 'cart' && <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 13 }}>({items.length} item{items.length !== 1 ? 's' : ''})</span>}
         </div>
       </div>
@@ -148,8 +149,11 @@ export default function CartPage() {
 
       {step === 'checkout' && (
         <div style={{ padding: '20px 20px 0' }}>
+          <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12, marginBottom: 4 }}>
+            Your order will appear as <strong style={{ color: 'rgba(255,255,255,0.5)' }}>FM Wellness</strong> on your bank statement.
+          </p>
           <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12, marginBottom: 20 }}>
-            Your order will be sent to us via WhatsApp and we&apos;ll confirm delivery with you directly.
+            Arrives in discreet, plain packaging. No logos. No questions.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>

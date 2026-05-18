@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma'
 import AddToCartButton from './AddToCartButton'
 import WishlistButton from './WishlistButton'
 import Link from 'next/link'
-import { ChevronLeft, Star, Package } from 'lucide-react'
+import { ChevronLeft, Star, Package, Lock, Truck, ShieldCheck } from 'lucide-react'
 
 const slugImg: Record<string, string> = {
   'luna-mini':                   'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=600&h=600&fit=crop',
@@ -39,7 +39,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
     : null
 
   return (
-    <div style={{ backgroundColor: '#08090D', minHeight: '100dvh', paddingBottom: 120 }}>
+    <div style={{ backgroundColor: '#08090D', minHeight: '100dvh', paddingBottom: 140 }}>
       {/* Sticky nav */}
       <div
         className="sticky top-0 z-30 flex items-center gap-3 px-5 py-3.5"
@@ -101,7 +101,13 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           )}
         </div>
 
-        {/* Add to cart + Buy Now */}
+        {/* Discreet badge */}
+        <div className="flex items-center gap-2 mb-4 px-3 py-2 rounded-xl" style={{ backgroundColor: 'rgba(166,106,134,0.06)', border: '1px solid rgba(166,106,134,0.12)' }}>
+          <Package size={12} color="#A66A86" strokeWidth={1.5} />
+          <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: 11 }}>Arrives in discreet packaging. No branding. No labels.</span>
+        </div>
+
+        {/* Add to bag + Buy Now */}
         <AddToCartButton
           productId={product.id}
           name={product.name}
@@ -137,6 +143,23 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           </div>
         )}
 
+        {/* Trust strip — sticky */}
+        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40"
+          style={{ backgroundColor: 'rgba(8,9,13,0.97)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '10px 20px' }}>
+          <div className="flex items-center justify-center gap-5">
+            {[
+              { icon: Truck, label: 'Discreet delivery' },
+              { icon: Lock, label: 'Secure payment' },
+              { icon: ShieldCheck, label: 'Your privacy matters' },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-1.5">
+                <Icon size={11} color="#A66A86" strokeWidth={1.5} />
+                <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: 10 }}>{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Reviews */}
         {product.reviews.length > 0 && (
           <div>
@@ -151,7 +174,9 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
                         <Star key={i} size={9} fill={i < review.rating ? '#A66A86' : 'transparent'} color={i < review.rating ? '#A66A86' : 'rgba(255,255,255,0.15)'} />
                       ))}
                     </div>
-                    <span className="text-[10px]" style={{ color: 'rgba(255,255,255,0.25)' }}>{review.user.name ?? 'Anonymous'}</span>
+                    <span className="text-[10px]" style={{ color: 'rgba(255,255,255,0.25)' }}>
+                      {review.anonymous ? 'Anonymous, Accra' : (review.user.name?.split(' ')[0] ?? 'Anonymous')}
+                    </span>
                   </div>
                   {review.title && <p className="text-[12px] font-medium text-white/70 mb-1">{review.title}</p>}
                   <p className="text-[11px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.35)' }}>{review.body}</p>
