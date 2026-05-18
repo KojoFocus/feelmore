@@ -53,26 +53,21 @@ const slugImg: Record<string, string> = {
 
 function ProductCard({ product }: { product: Product }) {
   const badge = product.badge ?? (product.isBestseller ? 'Bestseller' : null)
-  const bgColor = slugBg[product.slug] ?? '#1a1208'
   const imgUrl = slugImg[product.slug] ?? product.images[0]?.url
 
   return (
     <Link
       href={`/shop/${product.slug}`}
-      className="flex-shrink-0 rounded-[14px] overflow-hidden block"
-      style={{ backgroundColor: '#F5F2EE', width: 79 }}
+      className="flex-shrink-0 rounded-[16px] overflow-hidden block"
+      style={{ backgroundColor: '#F0EDE9', width: 105 }}
     >
-      <div className="relative w-full overflow-hidden" style={{ height: 80, backgroundColor: '#F5F2EE' }}>
+      <div className="relative w-full overflow-hidden" style={{ height: 100, backgroundColor: '#F0EDE9' }}>
         {imgUrl && (
-          <img
-            src={imgUrl}
-            alt={product.name}
-            className="w-full h-full object-cover"
-          />
+          <img src={imgUrl} alt={product.name} className="w-full h-full object-cover" />
         )}
         {badge && (
           <span
-            className="absolute top-1.5 left-1.5 text-[6px] font-bold text-white px-1 py-[2px] rounded-full tracking-wider uppercase"
+            className="absolute top-1.5 left-1.5 text-[7px] font-bold text-white px-1.5 py-[3px] rounded-full tracking-wider uppercase"
             style={{ backgroundColor: '#A66A86' }}
           >
             {badge}
@@ -80,25 +75,25 @@ function ProductCard({ product }: { product: Product }) {
         )}
       </div>
 
-      <div style={{ padding: '6px 8px 8px' }}>
-        <p className="font-semibold truncate leading-snug" style={{ fontSize: 10, color: '#1A1A1A' }}>
+      <div style={{ padding: '7px 9px 9px' }}>
+        <p className="font-semibold truncate leading-snug" style={{ fontSize: 11, color: '#1A1A1A' }}>
           {product.name}
         </p>
         {product.tagline && (
-          <p className="truncate mt-0.5" style={{ fontSize: 8, color: '#9CA3AF' }}>
+          <p className="truncate mt-0.5" style={{ fontSize: 9, color: '#9CA3AF' }}>
             {product.tagline}
           </p>
         )}
-        <div className="flex items-center justify-between mt-1.5">
-          <span className="font-bold" style={{ fontSize: 9, color: '#A66A86' }}>
+        <div className="flex items-center justify-between mt-2">
+          <span className="font-bold" style={{ fontSize: 10, color: '#A66A86' }}>
             {product.currency} {Number(product.price).toLocaleString()}
           </span>
           <button
             onClick={(e) => e.preventDefault()}
-            className="rounded-[5px]"
-            style={{ padding: 4, backgroundColor: 'rgba(166,106,134,0.12)' }}
+            className="rounded-[6px]"
+            style={{ padding: 5, backgroundColor: 'rgba(166,106,134,0.15)' }}
           >
-            <ShoppingCart size={9} color="#A66A86" />
+            <ShoppingCart size={10} color="#A66A86" />
           </button>
         </div>
       </div>
