@@ -39,7 +39,7 @@ export default async function Home() {
       <StoriesRow stories={serializedStories} />
 
       {/* Swipeable story cards — snap one at a time, peek next */}
-      <div style={{ flex: 1, minHeight: 0, maxHeight: '42dvh', paddingTop: 6, paddingLeft: 16, paddingRight: 16, overflow: 'hidden' }}>
+      <div style={{ flex: '0 0 32dvh', minHeight: 0, paddingTop: 6, paddingLeft: 16, paddingRight: 16, overflow: 'hidden' }}>
         <StoryCard stories={serializedStories} />
       </div>
 
@@ -56,7 +56,7 @@ export default async function Home() {
         }))} />
 
       {/* "You're not alone" strip */}
-      <Link href="/stories" style={{ textDecoration: 'none', flexShrink: 0 }}>
+      <Link href="/stories" style={{ textDecoration: 'none', flexShrink: 0, display: 'block' }}>
         <div style={{ margin: '4px 16px 0', padding: '8px 14px', borderRadius: 14, backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <Heart size={16} color="#A66A86" strokeWidth={1.5} />

@@ -62,7 +62,7 @@ function StoryCircle({
           backgroundColor: '#100C08',
         }}
       >
-        <div className="w-[54px] h-[54px] rounded-full overflow-hidden relative" style={{ backgroundColor: '#100C08' }}>
+        <div className="w-[48px] h-[48px] rounded-full overflow-hidden relative" style={{ backgroundColor: '#100C08' }}>
           {img && (
             <img
               src={img}
@@ -100,7 +100,7 @@ export default function StoriesRow({ stories = [] }: { stories: Story[] }) {
 
   return (
     <>
-      <section className="mt-1 flex-shrink-0">
+      <section style={{ flexShrink: 0, marginTop: 4 }}>
         <p className="mb-1 px-5" style={{ color: '#ffffff', fontSize: 14, fontWeight: 600 }}>Stories</p>
         {/* px-5 on the scroll container so the border wrapper is never clipped */}
         <div className="flex gap-3 overflow-x-auto scrollbar-hide px-5 pb-1">
