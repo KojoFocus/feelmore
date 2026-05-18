@@ -62,7 +62,7 @@ function StoryCircle({
           backgroundColor: '#100C08',
         }}
       >
-        <div className="w-[50px] h-[50px] rounded-full overflow-hidden relative" style={{ backgroundColor: '#100C08' }}>
+        <div className="w-[60px] h-[60px] rounded-full overflow-hidden relative" style={{ backgroundColor: '#100C08' }}>
           {img && (
             <img
               src={img}
@@ -74,7 +74,7 @@ function StoryCircle({
           )}
           {!img && (
             <div className="w-full h-full flex items-center justify-center">
-              <Plus size={18} color="#A66A86" strokeWidth={1.5} />
+              <Plus size={22} color="#A66A86" strokeWidth={1.5} />
             </div>
           )}
           {badge && active && (
@@ -87,7 +87,7 @@ function StoryCircle({
           )}
         </div>
       </div>
-      <span className="text-[9px] font-medium text-center w-[56px] leading-tight" style={{ color: 'rgba(255,255,255,0.55)' }}>{label}</span>
+      <span className="text-[10px] font-medium text-center w-[68px] leading-tight" style={{ color: 'rgba(255,255,255,0.55)' }}>{label}</span>
     </button>
   )
 }
@@ -100,8 +100,8 @@ export default function StoriesRow({ stories = [] }: { stories: Story[] }) {
 
   return (
     <>
-      <section className="mt-1 flex-shrink-0">
-        <p className="mb-1 px-5" style={{ color: '#ffffff', fontSize: 14, fontWeight: 600 }}>Stories</p>
+      <section className="mt-2 flex-shrink-0">
+        <p className="mb-1 px-5" style={{ color: '#ffffff', fontSize: 15, fontWeight: 600 }}>Stories</p>
         {/* px-5 on the scroll container so the border wrapper is never clipped */}
         <div className="flex gap-3 overflow-x-auto scrollbar-hide px-5 pb-1">
           <StoryCircle label="Your story" active={false} />
