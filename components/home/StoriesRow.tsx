@@ -62,7 +62,7 @@ function StoryCircle({
           backgroundColor: '#100C08',
         }}
       >
-        <div className="w-[48px] h-[48px] rounded-full overflow-hidden relative" style={{ backgroundColor: '#100C08' }}>
+        <div className="w-[56px] h-[56px] rounded-full overflow-hidden relative" style={{ backgroundColor: '#100C08' }}>
           {img && (
             <img
               src={img}
