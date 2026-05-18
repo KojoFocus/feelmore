@@ -59,9 +59,9 @@ function ProductCard({ product }: { product: Product }) {
     <Link
       href={`/shop/${product.slug}`}
       className="flex-shrink-0 rounded-[16px] overflow-hidden block"
-      style={{ backgroundColor: '#F0EDE9', width: 88 }}
+      style={{ backgroundColor: '#F0EDE9', width: 84 }}
     >
-      <div className="relative w-full overflow-hidden" style={{ height: 82, backgroundColor: '#F0EDE9' }}>
+      <div className="relative w-full overflow-hidden" style={{ height: 74, backgroundColor: '#F0EDE9' }}>
         {imgUrl && (
           <img src={imgUrl} alt={product.name} className="w-full h-full object-cover" />
         )}
@@ -103,7 +103,7 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function ProductRow({ products }: { products: Product[] }) {
   return (
-    <section className="flex-shrink-0" style={{ marginTop: 14, marginBottom: 6 }}>
+    <section className="flex-shrink-0" style={{ marginTop: 10, marginBottom: 4 }}>
       <div className="flex items-center justify-between px-5 mb-2">
         <p style={{ color: '#ffffff', fontSize: 13, fontWeight: 600 }}>Explore quietly</p>
         <Link href="/shop" style={{ color: '#A66A86', fontSize: 12, fontWeight: 500 }}>
