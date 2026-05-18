@@ -5,8 +5,6 @@ import Header from '@/components/layout/Header'
 import StoriesRow from '@/components/home/StoriesRow'
 import StoryCard from '@/components/home/StoryCard'
 import ProductRow from '@/components/home/ProductRow'
-import Link from 'next/link'
-import { Heart } from 'lucide-react'
 
 export default async function Home() {
   let stories: Awaited<ReturnType<typeof fetchStories>> = []
@@ -55,19 +53,6 @@ export default async function Home() {
           images: p.images,
         }))} />
 
-      {/* "You're not alone" strip */}
-      <Link href="/stories" style={{ textDecoration: 'none', flexShrink: 0 }}>
-        <div style={{ margin: '4px 16px 0', padding: '10px 14px', borderRadius: 14, backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <Heart size={16} color="#A66A86" strokeWidth={1.5} />
-            <div>
-              <p style={{ color: '#ffffff', fontSize: 13, fontWeight: 600 }}>You&apos;re not alone.</p>
-              <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 11, marginTop: 1 }}>Real people. Real stories.</p>
-            </div>
-          </div>
-          <span style={{ color: '#A66A86', fontSize: 12, fontWeight: 600 }}>Read more ›</span>
-        </div>
-      </Link>
     </div>
   )
 }
