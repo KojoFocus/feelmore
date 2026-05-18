@@ -41,7 +41,7 @@ export default function Header() {
   return (
     <header
       className="flex items-center justify-between px-5 flex-shrink-0"
-      style={{ paddingTop: 'max(44px, env(safe-area-inset-top, 44px))', paddingBottom: 12 }}
+      style={{ paddingTop: 'max(14px, env(safe-area-inset-top, 14px))', paddingBottom: 10 }}
     >
       <span className="text-[22px] font-bold tracking-tight">
         <span style={{ color: '#ffffff' }}>feel</span>
