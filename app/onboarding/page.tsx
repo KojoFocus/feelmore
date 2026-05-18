@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowRight, Shield, Package, Eye } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const INTERESTS = [
   { key: 'solo_wellness',      label: 'Solo wellness' },
@@ -108,9 +109,11 @@ export default function OnboardingPage() {
         ))}
       </div>
 
+      <AnimatePresence mode="wait">
+
       {/* Screen 1 */}
       {step === 0 && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <motion.div key="step0" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.3, ease: 'easeInOut' }} style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <p style={{ fontFamily: 'var(--font-playfair)', fontSize: 30, fontWeight: 600, color: '#fff', lineHeight: 1.3, marginBottom: 8 }}>
             What brings<br />you here?
           </p>
@@ -149,12 +152,12 @@ export default function OnboardingPage() {
           >
             Continue <ArrowRight size={16} />
           </button>
-        </div>
+        </motion.div>
       )}
 
       {/* Screen 2 */}
       {step === 1 && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <motion.div key="step1" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.3, ease: 'easeInOut' }} style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <p style={{ fontFamily: 'var(--font-playfair)', fontSize: 30, fontWeight: 600, color: '#fff', lineHeight: 1.3, marginBottom: 8 }}>
             How do you like<br />to learn?
           </p>
@@ -193,12 +196,12 @@ export default function OnboardingPage() {
           >
             Continue <ArrowRight size={16} />
           </button>
-        </div>
+        </motion.div>
       )}
 
       {/* Screen 3 */}
       {step === 2 && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <motion.div key="step2" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.3, ease: 'easeInOut' }} style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <p style={{ fontFamily: 'var(--font-playfair)', fontSize: 30, fontWeight: 600, color: '#fff', lineHeight: 1.3, marginBottom: 8 }}>
             A few things we<br />want you to know.
           </p>
@@ -267,8 +270,10 @@ export default function OnboardingPage() {
           >
             {saving ? 'One moment...' : "I'm ready. Let me in."}
           </button>
-        </div>
+        </motion.div>
       )}
+
+      </AnimatePresence>
     </div>
   )
 }

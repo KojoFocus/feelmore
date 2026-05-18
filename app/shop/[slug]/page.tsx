@@ -61,9 +61,9 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
       </div>
 
       {/* Hero image */}
-      <div className="relative" style={{ height: 320, backgroundColor: '#0e0910' }}>
+      <div className="relative overflow-hidden" style={{ height: 320, backgroundColor: '#0e0910' }}>
         {imgUrl && (
-          <img src={imgUrl} alt={product.name} className="w-full h-full object-cover" style={{ opacity: 0.55, mixBlendMode: 'luminosity' }} />
+          <img src={imgUrl} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" style={{ opacity: 0.55, mixBlendMode: 'luminosity' }} />
         )}
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(8,9,13,0.1) 0%, rgba(8,9,13,1) 100%)' }} />
         <div className="absolute top-3 right-4">
